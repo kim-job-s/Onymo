@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 홈 화면 메뉴 -->
+    <item android:id="@+id/bottom_navigation_home"
+        android:title="@string/bottom_navigation_item_home"
+        android:icon="@drawable/ic_bottom_navigation_home_24px"/>
+
+    <!-- 인사평가 화면 메뉴 -->
+    <item android:id="@+id/bottom_navigation_review"
+        android:title="@string/bottom_navigation_item_review"
+        android:icon="@drawable/ic_bottom_navigation_review_24px"/>
+
+    <!-- 평가매니저 메뉴 -->
+    <item android:id="@+id/bottom_navigation_group"
+        android:title="@string/bottom_navigation_item_manager"
+        android:icon="@drawable/ic_bottom_navigation_group_24px"/>
+
+    <!-- 평가명단 메뉴 -->
+    <item android:id="@+id/bottom_navigation_view"
+        android:title="@string/bottom_navigation_item_group"
+        android:icon="@drawable/ic_bottom_navigation_view_24px"/>
+
+    <!-- 보고서 화면 메뉴 -->
+    <item android:id="@+id/bottom_navigation_my"
+        android:title="@string/bottom_navigation_item_view"
+        android:icon="@drawable/ic_bottom_navigation_my_24px"/>
+</menu>

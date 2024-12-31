@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Onymo</string>
+
+    <!-- botttom navtigation item -->
+    <string name="bottom_navigation_item_home" translatable="true">Home</string>
+    <string name="bottom_navigation_item_review" translatable="true">review</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_large_title">34sp</dimen> <!-- 큰 타이틀 -->
+    <dimen name="text_size_title">24sp</dimen> <!-- 타이틀 -->
+    <dimen name="text_size_subtitle">20sp</dimen> <!-- 부제목 -->
+    <dimen name="text_size_body">16sp</dimen> <!-- 본문 -->
+    <dimen name="text_size_caption">12sp</dimen> <!-- 캡션 -->
+    <dimen name="text_size_small_caption">10sp</dimen> <!-- 작은 캡션 -->
+
+    <!-- Margins and Paddings -->
+    <dimen name="margin_small">8dp</dimen> <!-- 작은 마진 -->
+    <dimen name="margin_medium">16dp</dimen> <!-- 중간 마진 -->
+    <dimen name="margin_large">24dp</dimen> <!-- 큰 마진 -->
+    <dimen name="padding_small">8dp</dimen> <!-- 작은 패딩 -->
+    <dimen name="padding_medium">16dp</dimen> <!-- 중간 패딩 -->
+    <dimen name="padding_large">24dp</dimen> <!-- 큰 패딩 -->
+
+    <!-- Heights -->
+    <dimen name="topbar_height">72dp</dimen> <!-- 상단바 높이 -->
+    <dimen name="bottom_navigation_height">56dp</dimen> <!-- 하단바 높이 -->
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">24dp</dimen> <!-- 작은 아이콘 크기 -->
+    <dimen name="icon_size_large">32dp</dimen> <!-- 큰 아이콘 크기 -->
+
+    <!-- Elevations -->
+    <dimen name="elevation_default">4dp</dimen> <!-- 기본 그림자 높이 -->
+
+</resources>

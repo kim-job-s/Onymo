@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Onymo</string>
+
+    <!-- botttom navtigation item -->
+    <string name="bottom_navigation_item_home" translatable="false">홈</string>
+    <string name="bottom_navigation_item_review" translatable="false">인사평가</string>
+    <string name="bottom_navigation_item_manager" translatable="false">평가매니저</string>
+    <string name="bottom_navigation_item_group" translatable="false">평가명단</string>
+    <string name="bottom_navigation_item_view" translatable="false">보고서</string>
+
+    <!-- topbar_title -->
+    <string name="home" translatable="false">홈</string>
+
+    <string name="topbar_notification" translatable="false">알림</string>
+    <string name="topbar_message" translatable="false">메세지</string>
+    <string name="topbar_search" translatable="false">검색</string>
+    <string name="topbar_my_page" translatable="false">마이페이지</string>
+    .
+    <!-- review(평가) fragment TabLayout -->
+    <string name="tab_progress" translatable="false">평가진행</string>
+    <string name="tab_status" translatable="false">평가현황</string>
+    <string name="tab_confirm" translatable="false">평가확정</string>
+
+    <!-- manager(평가매니저) fragment TabLayout -->
+
+    <!-- Home fragment calendar -->
+
+</resources>

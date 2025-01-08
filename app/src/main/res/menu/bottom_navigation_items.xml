@@ -12,17 +12,17 @@
         android:icon="@drawable/ic_bottom_navigation_review_24px"/>
 
     <!-- 평가매니저 메뉴 -->
-    <item android:id="@+id/bottom_navigation_group"
+    <item android:id="@+id/bottom_navigation_edit"
         android:title="@string/bottom_navigation_item_manager"
-        android:icon="@drawable/ic_bottom_navigation_group_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_edit_24px"/>
 
     <!-- 평가명단 메뉴 -->
-    <item android:id="@+id/bottom_navigation_view"
+    <item android:id="@+id/bottom_navigation_group"
         android:title="@string/bottom_navigation_item_group"
-        android:icon="@drawable/ic_bottom_navigation_view_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_group_24px"/>
 
     <!-- 보고서 화면 메뉴 -->
-    <item android:id="@+id/bottom_navigation_my"
+    <item android:id="@+id/bottom_navigation_view"
         android:title="@string/bottom_navigation_item_view"
-        android:icon="@drawable/ic_bottom_navigation_my_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_view_24px"/>
 </menu>

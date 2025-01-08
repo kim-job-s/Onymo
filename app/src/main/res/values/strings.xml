@@ -1,28 +1,101 @@
 <resources>
+    <!-- Application Name -->
     <string name="app_name">Onymo</string>
 
-    <!-- botttom navtigation item -->
+    <!-- Bottom Navigation Items -->
     <string name="bottom_navigation_item_home" translatable="false">홈</string>
     <string name="bottom_navigation_item_review" translatable="false">인사평가</string>
     <string name="bottom_navigation_item_manager" translatable="false">평가매니저</string>
     <string name="bottom_navigation_item_group" translatable="false">평가명단</string>
     <string name="bottom_navigation_item_view" translatable="false">보고서</string>
 
-    <!-- topbar_title -->
-    <string name="home" translatable="false">홈</string>
-
+    <!-- Top Bar Titles -->
     <string name="topbar_notification" translatable="false">알림</string>
     <string name="topbar_message" translatable="false">메세지</string>
     <string name="topbar_search" translatable="false">검색</string>
     <string name="topbar_my_page" translatable="false">마이페이지</string>
-    .
-    <!-- review(평가) fragment TabLayout -->
-    <string name="tab_progress" translatable="false">평가진행</string>
-    <string name="tab_status" translatable="false">평가현황</string>
-    <string name="tab_confirm" translatable="false">평가확정</string>
 
-    <!-- manager(평가매니저) fragment TabLayout -->
+    <!-- Common Elements -->
+    <string name="close_button_description" translatable="false">닫기 버튼</string>
+    <string name="arrow_icon_description" translatable="false">이동 버튼</string>
+    <string name="map_button_description" translatable="false">지도 버튼</string>
+    <string name="logout_button_description" translatable="false">로그아웃 버튼</string>
 
-    <!-- Home fragment calendar -->
+    <!-- Home Fragment -->
+    <string name="home_title" translatable="false">홈</string>
+    <string name="home_today_date_text" translatable="false">오늘 날짜가 표시됩니다.</string>
+    <string name="home_selected_date_events_text" translatable="false">선택된 날짜의 이벤트가 표시됩니다.</string>
+    <string name="home_start_work_button_text" translatable="false">출근하기</string>
+    <string name="home_no_events" translatable="false">등록된 일정이 없습니다.</string>
+
+    <!-- MyPage Fragment -->
+    <string name="mypage" translatable="false">마이페이지</string>
+    <string name="mypage_login_register" translatable="false">로그인 및 회원가입</string>
+    <string name="mypage_basic_info" translatable="false">기본정보</string>
+    <string name="mypage_hr_info" translatable="false">인사정보</string>
+
+    <!-- HR Info Fragment Strings -->
+    <string name="hr_info_title" translatable="false">인사 정보</string>
+    <string name="hr_info_company_name" translatable="false">회사명</string>
+    <string name="hr_info_company_location" translatable="false">회사 위치</string>
+    <string name="hr_info_company_registration" translatable="false">사업자 번호</string>
+    <string name="hr_info_employment_info" translatable="false">계약 정보</string>
+    <string name="hr_info_organization" translatable="false">조직</string>
+    <string name="hr_info_job" translatable="false">직무</string>
+    <string name="hr_info_position_duty" translatable="false">직위/직책</string>
+    <string name="hr_info_company_textInput_hint" translatable="false">회사명을 입력해주세요</string>
+    <string name="hr_info_company_location_textInput_hint" translatable="false">회사위치를 입력해주세요</string>
+    <string name="hr_info_company_registration_textInput_hint" translatable="false">사업자번호를 입력해주세요</string>
+    <string name="hr_info_organization_textInput_hint" translatable="false">조직명을 입력해주세요</string>
+    <string name="hr_info_employment_info_textInput_hint" translatable="false">계약정보를 선택해주세요</string>
+    <string name="hr_info_job_textInput_hint" translatable="false">직무를 입력해주세요</string>
+    <string name="hr_info_position_duty_textInput_hint" translatable="false">직위/직책을 입력해주세요</string>
+
+    <!-- 계약정보 옵션 -->
+    <string-array name="employment_type_options">
+        <item>정규직</item>
+        <item>비정규직</item>
+        <item>계약직</item>
+        <item>프리랜서</item>
+        <item>기타</item>
+    </string-array> `
+
+    <!-- Button Strings -->
+    <string name="input" translatable="false">입력하기</string>
+    <string name="save" translatable="false">저장하기</string>
+    <string name="modify" translatable="false">수정하기</string>
+
+    <!-- Review Fragment -->
+    <string name="review_title" translatable="false">인사평가</string>
+    <string name="review_tab_progress" translatable="false">평가진행</string>
+    <string name="review_tab_status" translatable="false">평가현황</string>
+    <string name="review_tab_confirm" translatable="false">평가확정</string>
+
+    <!-- Login Screen -->
+    <string name="login_title" translatable="false">로그인</string>
+    <string name="login_btn" translatable="false">로그인</string>
+    <string name="login_auto_login" translatable="false">자동로그인</string>
+    <string name="login_join_question" translatable="false">혹시, 오니모(Onymo)는 처음이신가요?</string>
+    <string name="login_join" translatable="false">회원가입</string>
+    <string name="login_error" translatable="false">계정 정보가 일치하지 않습니다.</string>
+
+
+    <!-- Join Form -->
+    <string name="join_form_title_first_top" translatable="false">이름을</string>
+    <string name="join_form_title_first_bottom" translatable="false">입력해주세요</string>
+    <string name="join_form_title_email_top" translatable="false">이메일을</string>
+    <string name="join_form_title_email_bottom" translatable="false">입력해주세요</string>
+    <string name="join_form_title_password_top" translatable="false">비밀번호를</string>
+    <string name="join_form_title_password_bottom" translatable="false">입력해주세요</string>
+    <string name="join_form_title_password_check_bottom" translatable="false">확인해주세요</string>
+    <string name="join_form_title_nickname_top" translatable="false">마지막 단계입니다!</string>
+    <string name="join_form_title_nickname_bottom" translatable="false">닉네임을 입력해주세요</string>
+    <string name="hint_nickname" translatable="false">닉네임</string>
+    <string name="hint_password_check" translatable="false">비밀번호 확인</string>
+    <string name="hint_password" translatable="false">비밀번호</string>
+    <string name="hint_email" translatable="false">이메일</string>
+    <string name="hint_name" translatable="false">이름</string>
+    <string name="join_form_btn_next" translatable="false">다음</string>
+    <string name="join_form_btn_next_check" translatable="false">확인</string>
 
 </resources>

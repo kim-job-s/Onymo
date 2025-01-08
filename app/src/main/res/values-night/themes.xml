@@ -3,5 +3,34 @@
     <style name="Base.Theme.Onymo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Background and Surface -->
+        <item name="android:colorBackground">@color/colorNeutralDark</item>
+        <item name="colorSurface">@color/colorNeutralDark</item>
+        <item name="colorOnSurface">@color/colorNeutralLight</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+
+        <!-- Highlight Colors -->
+        <item name="colorError">@color/colorError</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Text and Icon -->
+        <item name="android:textColor">@color/colorNeutralLight</item>
+
+        <!-- Tab Colors -->
+        <item name="tabIndicatorColor">@color/colorPrimaryLight</item>
+        <item name="tabSelectedTextColor">@color/colorPrimary</item>
     </style>
 </resources>

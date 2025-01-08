@@ -7,33 +7,70 @@
     android:layout_height="match_parent"
     android:background="@color/colorSurface">
 
+    <!-- 상단바 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topbar_review"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        android:padding="@dimen/padding_medium"
+        android:background="@color/colorSurface"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:id="@+id/topbar_title_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_title"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- 검색 버튼 -->
+        <ImageButton
+            android:id="@+id/topbar_search"
+            android:layout_width="@dimen/icon_size_small"
+            android:layout_height="@dimen/icon_size_small"
+            android:src="@drawable/ic_topbar_search_24px"
+            android:contentDescription="@string/topbar_search"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <!-- Tab Layout -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorSurface"
         app:tabIndicatorColor="@color/tabIndicatorColor"
         app:tabSelectedTextColor="@color/tabSelectedTextColor"
         app:tabTextColor="@color/tabUnselectedTextColor"
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
         app:tabGravity="fill"
+        app:layout_constraintTop_toBottomOf="@id/topbar_review"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_progress" />
+            android:text="@string/review_tab_progress" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_status" />
+            android:text="@string/review_tab_status" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_confirm" />
+            android:text="@string/review_tab_confirm" />
     </com.google.android.material.tabs.TabLayout>
 
     <!-- Fragment Container -->
@@ -41,9 +78,11 @@
         android:id="@+id/tab_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,19 +8,19 @@
 
     <!-- 상단바 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topbar"
+        android:id="@+id/topbar_home"
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
         android:padding="@dimen/padding_medium"
         android:background="@color/colorSurface"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- 홈 테스트 -->
+        <!-- 홈 타이틀 -->
         <TextView
-            android:id="@+id/topbar_title"
+            android:id="@+id/topbar_title_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home"
+            android:text="@string/home_title"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!--  버튼 -->
+        <!-- 마이페이지 버튼 -->
         <ImageButton
             android:id="@+id/topbar_my_page"
             android:layout_width="@dimen/icon_size_small"
@@ -68,16 +68,51 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 달력 RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendar_recycler_view"
+    <!-- 캘린더 -->
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/material_calendar_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="@dimen/padding_medium"
-        app:layout_constraintTop_toBottomOf="@id/topbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topbar_home"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/colorPrimary"
+        app:mcv_headerTextAppearance="@style/CalendarWidgetHeader"
+        app:mcv_weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+        app:mcv_dateTextAppearance="@style/CalenderViewDateCustomText"/>
+
+    <!-- 오늘 날짜 -->
+    <TextView
+        android:id="@+id/today_date_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/home_today_date_text"
+        android:textSize="@dimen/text_size_title"
+        android:textColor="@color/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/material_calendar_view" />
+
+    <!-- 출근하기 버튼 -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_work_button"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="@string/home_start_work_button_text"
+        style="@style/CustomButton"
+        app:layout_constraintTop_toBottomOf="@id/today_date_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 선택된 날짜 이벤트 -->
+    <com.onymo.app.ui.custom.NoticeTextView
+        android:id="@+id/selected_date_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/home_selected_date_events_text"
+        android:textSize="@dimen/text_size_body"
+        android:textColor="@color/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/start_work_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

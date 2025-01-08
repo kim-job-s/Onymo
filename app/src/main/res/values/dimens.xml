@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!-- ===================== -->
     <!-- Text Sizes -->
+    <!-- ===================== -->
     <dimen name="text_size_large_title">34sp</dimen> <!-- 큰 타이틀 -->
     <dimen name="text_size_title">24sp</dimen> <!-- 타이틀 -->
     <dimen name="text_size_subtitle">20sp</dimen> <!-- 부제목 -->
+    <dimen name="text_size_small_title">12sp</dimen> <!-- 소제목 -->
     <dimen name="text_size_body">16sp</dimen> <!-- 본문 -->
     <dimen name="text_size_caption">12sp</dimen> <!-- 캡션 -->
     <dimen name="text_size_small_caption">10sp</dimen> <!-- 작은 캡션 -->
 
+    <!-- ===================== -->
     <!-- Margins and Paddings -->
+    <!-- ===================== -->
     <dimen name="margin_small">8dp</dimen> <!-- 작은 마진 -->
     <dimen name="margin_medium">16dp</dimen> <!-- 중간 마진 -->
     <dimen name="margin_large">24dp</dimen> <!-- 큰 마진 -->
@@ -17,15 +20,39 @@
     <dimen name="padding_medium">16dp</dimen> <!-- 중간 패딩 -->
     <dimen name="padding_large">24dp</dimen> <!-- 큰 패딩 -->
 
+    <!-- ===================== -->
     <!-- Heights -->
+    <!-- ===================== -->
     <dimen name="topbar_height">72dp</dimen> <!-- 상단바 높이 -->
     <dimen name="bottom_navigation_height">56dp</dimen> <!-- 하단바 높이 -->
 
+    <!-- ===================== -->
     <!-- Icon Sizes -->
+    <!-- ===================== -->
     <dimen name="icon_size_small">24dp</dimen> <!-- 작은 아이콘 크기 -->
     <dimen name="icon_size_large">32dp</dimen> <!-- 큰 아이콘 크기 -->
 
+    <!-- ===================== -->
     <!-- Elevations -->
+    <!-- ===================== -->
     <dimen name="elevation_default">4dp</dimen> <!-- 기본 그림자 높이 -->
 
+    <!-- ===================== -->
+    <!-- Login Specific -->
+    <!-- ===================== -->
+    <dimen name="login_btn_back_margin">24dp</dimen> <!-- 버튼과 뒤쪽 여백 -->
+    <dimen name="login_btn_margin_top">16dp</dimen> <!-- 버튼 상단 여백 -->
+    <dimen name="login_txt_join_margin_top">16dp</dimen> <!-- 텍스트 상단 여백 -->
+    <dimen name="login_txt_join_padding_horizontal">8dp</dimen> <!-- 텍스트 좌우 패딩 -->
+    <dimen name="login_btn_text_size">16sp</dimen> <!-- 버튼 텍스트 크기 -->
+    <dimen name="login_error_margin">24dp</dimen> <!-- 오류 메시지 여백 -->
+
+    <!-- ===================== -->
+    <!-- Join Form Specific -->
+    <!-- ===================== -->
+    <dimen name="join_form_margin">24dp</dimen> <!-- 회원가입 양식 여백 -->
+    <dimen name="join_form_layout_margin_top">16dp</dimen> <!-- 레이아웃 상단 여백 -->
+    <dimen name="join_form_title_size">24sp</dimen> <!-- 회원가입 타이틀 크기 -->
+    <dimen name="join_form_edittext_size">16sp</dimen> <!-- 입력창 텍스트 크기 -->
+    <dimen name="join_form_btn_text_size">16sp</dimen> <!-- 버튼 텍스트 크기 -->
 </resources>

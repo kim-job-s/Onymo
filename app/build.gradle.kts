@@ -36,6 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildToolsVersion = "35.0.0"
 }
 
 dependencies {
@@ -45,7 +46,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
+    implementation(libs.androidx.fragment)
+    implementation(libs.material.calendarview)
+    implementation(libs.threetenabp)
+    implementation(libs.junit)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

@@ -3,6 +3,37 @@
     <style name="Base.Theme.Onymo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color -->
+
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Background and Surface -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/colorStatusBar</item>
+        <item name="android:navigationBarColor">@color/colorNavigationBar</item>
+
+        <!-- Highlight Colors -->
+        <item name="colorError">@color/colorError</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Text and Icon -->
+        <item name="android:textColor">@color/colorOnSurface</item>
+
+        <!-- Tab Colors -->
+        <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
+        <item name="tabSelectedTextColor">@color/tabSelectedTextColor</item>
     </style>
 
     <style name="Theme.Onymo" parent="Base.Theme.Onymo" />

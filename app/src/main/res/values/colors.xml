@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Primary Palette -->
+    <!-- ===================== -->
+    <!-- Primary Color Palette -->
+    <!-- ===================== -->
     <color name="colorPrimary">#1565C0</color> <!-- 메인 파란색 -->
     <color name="colorPrimaryLight">#5E92F3</color> <!-- 밝은 파란색 -->
     <color name="colorPrimaryDark">#003C8F</color> <!-- 어두운 파란색 -->
     <color name="colorAccent">#FF7043</color> <!-- 포인트 주황색 -->
 
-    <!-- Secondary Palette -->
-    <color name="colorSecondary">#81D4FA</color> <!-- 연한 하늘 색 -->
+    <!-- ===================== -->
+    <!-- Secondary Color Palette -->
+    <!-- ===================== -->
+    <color name="colorSecondary">#81D4FA</color> <!-- 연한 하늘색 -->
     <color name="colorSecondaryLight">#B6FFFF</color> <!-- 더 밝은 하늘색 -->
     <color name="colorSecondaryDark">#4BA3C7</color> <!-- 어두운 하늘색 -->
 
+    <!-- ===================== -->
     <!-- Neutral Colors -->
+    <!-- ===================== -->
     <color name="colorBackground">#FFFFFF</color> <!-- 배경 흰색 -->
     <color name="colorSurface">#F5F5F5</color> <!-- 부드러운 회색 배경 -->
     <color name="colorGray">#BDBDBD</color> <!-- 중립적인 회색 -->
@@ -22,13 +28,65 @@
     <color name="colorOnSecondary">#000000</color> <!-- Secondary 텍스트 검정 -->
     <color name="colorOnSurface">#5F6368</color> <!-- 일반 텍스트 검정 -->
 
+    <!-- ===================== -->
     <!-- Highlight Colors -->
+    <!-- ===================== -->
     <color name="colorSuccess">#28A745</color> <!-- 성공 표시 초록 -->
     <color name="colorError">#E53935</color> <!-- 오류 표시 빨강 -->
 
+    <!-- ===================== -->
     <!-- Tab Specific Colors -->
+    <!-- ===================== -->
     <color name="tabIndicatorColor">#5E92F3</color> <!-- 탭 Indicator 색상 -->
     <color name="tabSelectedTextColor">#1565C0</color> <!-- 선택된 탭 텍스트 -->
     <color name="tabUnselectedTextColor">#9E9E9E</color> <!-- 선택되지 않은 탭 텍스트 -->
+
+    <!-- ===================== -->
+    <!-- Calendar Colors -->
+    <!-- ===================== -->
+    <color name="highlightBackgroundColor">#FFEBEE</color> <!-- 배경 밝은 빨강 -->
+    <color name="highlightStrokeColor">#D32F2F</color> <!-- 테두리 진한 빨강 -->
+    <color name="highlightTextColor">#C62828</color> <!-- 텍스트 색 진한 빨강 -->
+    <color name="weekendColor">#1976D2</color> <!-- 주말 텍스트 색상 -->
+    <color name="colorHoliday">#FF5722</color> <!-- 공휴일 텍스트 색상 (빨간색 계열) -->
+    <color name="colorHolidayBackground">#FFF3E0</color> <!-- 공휴일 배경 색상 (밝은 주황색 계열) -->
+    <color name="colorSaturday">#2196F3</color> <!-- 파란색 (토요일) -->
+    <color name="colorSunday">#F44336</color> <!-- 빨간색 (일요일) -->
+
+    <!-- ===================== -->
+    <!-- Login Specific Colors -->
+    <!-- ===================== -->
+    <color name="loginBackgroundColor">#F5F5F5</color> <!-- 로그인 배경색 -->
+    <color name="loginButtonColor">#1E88E5</color> <!-- 로그인 버튼 색 -->
+    <color name="loginButtonTextColor">#FFFFFF</color> <!-- 로그인 버튼 텍스트 색 -->
+    <color name="loginHintTextColor">#9E9E9E</color> <!-- 힌트 텍스트 색 -->
+    <color name="loginErrorTextColor">#D32F2F</color> <!-- 에러 메시지 텍스트 색 -->
+    <color name="loginTextColor">#212121</color> <!-- 일반 텍스트 색 -->
+    <color name="loginCheckboxTextColor">#616161</color> <!-- 체크박스 텍스트 색 -->
+    <color name="loginLinkColor">#64B5F6</color> <!-- 링크(회원가입) 텍스트 색 -->
+
+    <!-- ===================== -->
+    <!-- Custom Checkbox Color -->
+    <!-- ===================== -->
+    <color name="customCheckboxColor">#1E88E5</color> <!-- 체크박스 커스텀 색 -->
+
+    <!-- ===================== -->
+    <!-- Custom Status and NavigationBar Color -->
+    <!-- ===================== -->
+    <color name="colorStatusBar">#F5F5F5</color> <!-- 상태창 색상 -->
+    <color name="colorNavigationBar">#F5F5F5</color> <!-- 네비게이션 바 색상 -->
+
+    <!-- ===================== -->
+    <!-- Common Specific Colors -->
+    <!-- ===================== -->
+    <color name="HintTextColor">#9E9E9E</color> <!-- 힌트 텍스트 색 -->
+
+    <!-- ===================== -->
+    <!-- Text Colors -->
+    <!-- ===================== -->
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_black">#000000</color>
+    <color name="text_gray">#757575</color> <!-- 밝은 회색 텍스트 -->
+    <color name="text_dark_gray">#424242</color> <!-- 어두운 회색 텍스트 -->
 
 </resources>

@@ -1,16 +1,19 @@
-package com.onymo.app.ui.mypage.login
+package com.onymo.app.ui.setting.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.onymo.app.R
 import com.onymo.app.databinding.FragmentLoginBinding
 import com.onymo.app.repository.LoginRepository
-import com.onymo.app.ui.mypage.MypageFragment
+import com.onymo.app.ui.setting.SettingFragment
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
@@ -33,6 +36,13 @@ class LoginFragment : Fragment() {
 
         viewModel = LoginViewModel(LoginRepository())
 
+        // 초기 상태: 로그인 버튼 비활성화
+        toggleLoginButton(false)
+
+        // 이메일 및 비밀번호 입력 필드 변경 감지
+        binding.loginEditEmail.addTextChangedListener(textWatcher)
+        binding.loginEditPassword.addTextChangedListener(textWatcher)
+
         // 로그인 버튼 클릭 이벤트
         binding.loginBtn.setOnClickListener {
             val email = binding.loginEditEmail.text.toString()
@@ -47,6 +57,30 @@ class LoginFragment : Fragment() {
         binding.topbarCloseButton.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            val email = binding.loginEditEmail.text.toString().trim()
+            val password = binding.loginEditPassword.text.toString().trim()
+            toggleLoginButton(email.isNotEmpty() && password.isNotEmpty())
+        }
+        override fun afterTextChanged(s: Editable?) {}
+    }
+
+    /**
+     * 로그인 버튼의 활성화/비활성화 상태를 전환
+     * @param isEnabled 활성화 여부
+     */
+    private fun toggleLoginButton(isEnabled: Boolean) {
+        binding.loginBtnJoin.isEnabled = isEnabled
+        val background = if (isEnabled) {
+            R.drawable.login_button_background // 활성화 상태
+        } else {
+            R.drawable.login_button_background_disabled // 비활성화 상태
+        }
+        binding.loginBtn.background = ContextCompat.getDrawable(requireContext(), background)
     }
 
     private fun observeLoginResult() {
@@ -70,7 +104,7 @@ class LoginFragment : Fragment() {
 
     private fun navigateToMypage() {
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, MypageFragment())
+            .replace(R.id.fragment_container, SettingFragment())
             .addToBackStack(null) // 뒤로가기 지원
             .commit()
     }

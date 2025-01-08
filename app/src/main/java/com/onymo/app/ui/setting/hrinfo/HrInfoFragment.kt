@@ -1,4 +1,4 @@
-package com.onymo.app.ui.mypage.hrinfo
+package com.onymo.app.ui.setting.hrinfo
 
 import android.os.Bundle
 import android.text.Editable

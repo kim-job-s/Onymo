@@ -9,12 +9,12 @@
     <!-- 인사평가 화면 메뉴 -->
     <item android:id="@+id/bottom_navigation_review"
         android:title="@string/bottom_navigation_item_review"
-        android:icon="@drawable/ic_bottom_navigation_review_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_thumb_up_24px"/>
 
     <!-- 평가매니저 메뉴 -->
     <item android:id="@+id/bottom_navigation_edit"
         android:title="@string/bottom_navigation_item_manager"
-        android:icon="@drawable/ic_bottom_navigation_edit_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_edit_square_24px"/>
 
     <!-- 평가명단 메뉴 -->
     <item android:id="@+id/bottom_navigation_group"
@@ -24,5 +24,5 @@
     <!-- 보고서 화면 메뉴 -->
     <item android:id="@+id/bottom_navigation_view"
         android:title="@string/bottom_navigation_item_view"
-        android:icon="@drawable/ic_bottom_navigation_view_24px"/>
+        android:icon="@drawable/ic_bottom_navigation_description_24px"/>
 </menu>

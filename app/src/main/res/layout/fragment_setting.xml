@@ -69,7 +69,7 @@
             android:id="@+id/login_register_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_arrow_forward_ios_24px"
+            android:drawableEnd="@drawable/ic_login_24px"
             android:gravity="end|center_vertical"
             android:paddingEnd="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +89,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageView
+            android:id="@+id/basic_info_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_face_24px"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
         <TextView
             android:id="@+id/menu_basic_info"
             android:layout_width="0dp"
@@ -96,7 +106,8 @@
             android:text="@string/mypage_basic_info"
             android:textSize="@dimen/text_size_subtitle"
             android:textColor="@color/colorOnSurface"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/basic_info_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/basic_info_arrow" />
@@ -106,7 +117,7 @@
             android:id="@+id/basic_info_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_arrow_forward_ios_24px"
+            android:drawableEnd="@drawable/ic_arrow_forward_24px"
             android:gravity="end|center_vertical"
             android:paddingEnd="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
@@ -126,6 +137,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageView
+            android:id="@+id/hr_info_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_person_24px"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
         <TextView
             android:id="@+id/menu_hr_info"
             android:layout_width="0dp"
@@ -133,7 +154,8 @@
             android:text="@string/mypage_hr_info"
             android:textSize="@dimen/text_size_subtitle"
             android:textColor="@color/colorOnSurface"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/hr_info_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/hr_info_arrow" />
@@ -142,7 +164,7 @@
             android:id="@+id/hr_info_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_arrow_forward_ios_24px"
+            android:drawableEnd="@drawable/ic_arrow_forward_24px"
             android:gravity="end|center_vertical"
             android:paddingEnd="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"

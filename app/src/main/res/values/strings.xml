@@ -9,17 +9,15 @@
     <string name="bottom_navigation_item_group" translatable="false">평가명단</string>
     <string name="bottom_navigation_item_view" translatable="false">보고서</string>
 
-    <!-- Top Bar Titles -->
-    <string name="topbar_notification" translatable="false">알림</string>
-    <string name="topbar_message" translatable="false">메세지</string>
-    <string name="topbar_search" translatable="false">검색</string>
-    <string name="topbar_my_page" translatable="false">마이페이지</string>
-
-    <!-- Common Elements -->
+    <!-- description -->
     <string name="close_button_description" translatable="false">닫기 버튼</string>
     <string name="arrow_icon_description" translatable="false">이동 버튼</string>
     <string name="map_button_description" translatable="false">지도 버튼</string>
     <string name="logout_button_description" translatable="false">로그아웃 버튼</string>
+    <string name="topbar_setting_description" translatable="false">설정 버튼</string>
+    <string name="topbar_search_description" translatable="false">찾기 버튼</string>
+    basic_info_icon
+
 
     <!-- Home Fragment -->
     <string name="home_title" translatable="false">홈</string>
@@ -28,8 +26,8 @@
     <string name="home_start_work_button_text" translatable="false">출근하기</string>
     <string name="home_no_events" translatable="false">등록된 일정이 없습니다.</string>
 
-    <!-- MyPage Fragment -->
-    <string name="mypage" translatable="false">마이페이지</string>
+    <!-- Setting Fragment -->
+    <string name="mypage" translatable="false">설정</string>
     <string name="mypage_login_register" translatable="false">로그인 및 회원가입</string>
     <string name="mypage_basic_info" translatable="false">기본정보</string>
     <string name="mypage_hr_info" translatable="false">인사정보</string>

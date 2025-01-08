@@ -1,4 +1,4 @@
-package com.onymo.app.ui.mypage.login
+package com.onymo.app.ui.setting.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

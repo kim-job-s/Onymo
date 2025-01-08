@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 그림자 (바깥쪽 음영 효과) -->
+    <item android:left="6dp" android:top="6dp" android:right="6dp" android:bottom="6dp">
+        <shape>
+            <gradient
+                android:startColor="#33000000"
+                android:endColor="#00000000"
+                android:angle="90" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- 내부 그림자 (내부 가장자리 음영) -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#FFFFFF"
+                android:endColor="#F0F0F0"
+                android:angle="90" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- 테두리와 배경 -->
+    <item>
+        <shape>
+            <stroke android:width="1dp" android:color="@color/colorGray" />
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+</layer-list>

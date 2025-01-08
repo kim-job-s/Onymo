@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 출근하기 버튼 스타일 -->
-    <style name="CustomButton">
-        <!-- 버튼 크기 -->
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <!-- 버튼 배경 색 -->
-        <item name="backgroundTint">@color/colorPrimaryLight</item>
-        <!-- 텍스트 색 -->
-        <item name="android:textColor">#FFFFFF</item>
-        <!-- 둥근 모서리 -->
-        <item name="cornerRadius">8dp</item>
+
+    <!-- 오늘 날짜 텍스트 스타일 -->
+    <style name="TodayDateTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorOnSurface</item>
     </style>
 
-    <!-- 지도 버튼 스타일 -->
-    <style name="MapButtonStyle" parent="Widget.AppCompat.ImageButton">
-        <!-- 버튼 크기 -->
-        <item name="android:layout_width">48dp</item>
+    <!-- 출근하기 버튼 스타일 -->
+    <style name="StartWorkButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
-        <!-- 둥근 배경 -->
-        <item name="android:background">@color/colorSurface</item>
-        <!-- 아이콘 내부 여백 -->
-        <item name="android:padding">8dp</item>
-        <!-- 내용 설명 -->
-        <item name="android:contentDescription">@string/map_button_description</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <!-- 바텀 네비게이션 클릭 스타일 -->
+    <style name="BottomNavigationActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/colorSecondary</item> <!-- 활성 상태 배경 색상 -->
+        <item name="android:radius">20dp</item> <!-- 둥근 모서리 -->
     </style>
 
     <!-- 로그인 버튼 스타일 -->

@@ -12,7 +12,7 @@ import com.onymo.app.databinding.FragmentHomeBinding
 import com.onymo.app.ui.home.HomeViewModel
 import com.onymo.app.ui.custom.NoticeTextView
 import com.onymo.app.ui.home.CalendarDecorators
-import com.onymo.app.ui.mypage.MypageFragment
+import com.onymo.app.ui.setting.SettingFragment
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
@@ -51,7 +51,11 @@ class HomeFragment : Fragment() {
 
         // 기본적으로 오늘 날짜를 선택
         calendarView.setDateSelected(today, true)
-        noticeTextView.text = "${today.year}-${today.month}-${today.day}의 이벤트를 표시합니다."
+        noticeTextView.setEvents(
+            viewModel.getEventsForDate(today.toString()),
+            isHoliday = false,
+            isToday = true
+        )
 
         // 공휴일 가져오기
         val holidays = viewModel.getHolidayDates()
@@ -68,22 +72,21 @@ class HomeFragment : Fragment() {
         calendarView.setOnDateChangedListener(OnDateSelectedListener { _, date, _ ->
             // 날짜를 "yyyy-MM-dd" 형식으로 변환
             val selectedDate = String.format("%04d-%02d-%02d", date.year, date.month + 1, date.day)
+            val isToday = date == today
             val events = viewModel.getEventsForDate(selectedDate) // 특정 날짜의 모든 이벤트를 가져옴
 
-            if (events.isNotEmpty()) {
-                    noticeTextView.text = "[$selectedDate]: $events"
-                noticeTextView.setEvents(events, isHoliday = holidays.contains(CalendarDay.from(date.year, date.month, date.day)))
-            } else {
-                    noticeTextView.text = "[$selectedDate]: 등록된 일정이 없습니다."
-                    noticeTextView.setEvents(emptyList(), isHoliday = false)
-            }
+            noticeTextView.setEvents(
+                events,
+                isHoliday = viewModel.getHolidayDates().contains(date),
+                isToday = isToday
+            )
         })
 
-        //마이페이지 버튼 클릭 이벤트 설정
-        val myPageButton: ImageButton = view.findViewById(R.id.topbar_my_page)
+        //설정 버튼 클릭 이벤트 설정
+        val myPageButton: ImageButton = view.findViewById(R.id.topbar_setting)
         myPageButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MypageFragment())
+                .replace(R.id.fragment_container, SettingFragment())
                 .addToBackStack(null) // 뒤로가기 지원
                 .commit()
         }

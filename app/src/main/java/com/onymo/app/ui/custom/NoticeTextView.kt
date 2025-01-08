@@ -14,9 +14,7 @@ class NoticeTextView @JvmOverloads constructor(
 
     init {
         // 초기화는 "등록된 일정 없음" 상태로 설정
-        updateAppearance(isHoliday = false, hasEvent = false)
-        // 기본 패딩 설정
-        //setPadding(48, 19, 48, 19)
+        updateAppearance(isHoliday = false, hasEvent = false, isToday = false)
     }
 
     /**
@@ -24,8 +22,13 @@ class NoticeTextView @JvmOverloads constructor(
      * @param isHoliday 공휴일 여부
      * @param hasEvent 등록된 일정 여부
      */
-    fun updateAppearance(isHoliday: Boolean, hasEvent: Boolean) {
+    fun updateAppearance(isHoliday: Boolean, hasEvent: Boolean, isToday: Boolean) {
         when {
+            isToday -> {
+                // 오늘 날짜 스타일
+                setBackgroundResource(R.drawable.notice_background_today)
+                setTextColor(ContextCompat.getColor(context, R.color.colorOnSurface)) // 검은 텍스트
+            }
             isHoliday -> {
                 // 공휴일 스타일
                 setBackgroundResource(R.drawable.notice_background_holiday)
@@ -48,13 +51,13 @@ class NoticeTextView @JvmOverloads constructor(
      * 여러 이벤트를 텍스트로 설정
      * @param events 이벤트 목록
      */
-    fun setEvents(events: List<String>, isHoliday: Boolean) {
+    fun setEvents(events: List<String>, isHoliday: Boolean, isToday: Boolean) {
         if (events.isEmpty()) {
             text = context.getString(R.string.home_no_events) // 등록된 일정 없음
-            updateAppearance(isHoliday = false, hasEvent = false)
+            updateAppearance(isHoliday = false, hasEvent = false, isToday = isToday)
         } else {
-            text = events.joinToString (separator = "\n") // 여러 이벤트를 줄바꿈으로 표시
-            updateAppearance(isHoliday = isHoliday, hasEvent = true)
+            text = events.joinToString(separator = "\n") // 여러 이벤트를 줄바꿈으로 표시
+            updateAppearance(isHoliday = isHoliday, hasEvent = true, isToday = isToday)
         }
     }
 }

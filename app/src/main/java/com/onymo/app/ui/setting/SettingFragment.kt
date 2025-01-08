@@ -1,4 +1,4 @@
-package com.onymo.app.ui.mypage
+package com.onymo.app.ui.setting
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.onymo.app.R
-import com.onymo.app.ui.mypage.hrinfo.HrInfoFragment
-import com.onymo.app.ui.mypage.login.LoginFragment
-import com.onymo.app.ui.mypage.login.LoginViewModel
+import com.onymo.app.ui.setting.hrinfo.HrInfoFragment
+import com.onymo.app.ui.setting.login.LoginFragment
+import com.onymo.app.ui.setting.login.LoginViewModel
 
-class MypageFragment : Fragment() {
+class SettingFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
     private lateinit var companyNameTextView: TextView
@@ -23,7 +23,7 @@ class MypageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_mypage, container, false)
+        return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

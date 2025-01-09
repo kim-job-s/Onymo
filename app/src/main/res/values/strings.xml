@@ -9,28 +9,52 @@
     <string name="bottom_navigation_item_group" translatable="false">평가명단</string>
     <string name="bottom_navigation_item_view" translatable="false">보고서</string>
 
-    <!-- description -->
+    <!-- ===================== -->
+    <!-- Title -->
+    <!-- ===================== -->
+    <string name="title_home" translatable="false">홈</string>
+    <string name="title_setting" translatable="false">설정</string>
+    <string name="title_review" translatable="false">인사평가</string>
+    <string name="title_manager" translatable="false">평가매니저</string>
+
+    <!-- ===================== -->
+    <!-- Description -->
+    <!-- ===================== -->
     <string name="close_button_description" translatable="false">닫기 버튼</string>
-    <string name="arrow_icon_description" translatable="false">이동 버튼</string>
-    <string name="map_button_description" translatable="false">지도 버튼</string>
-    <string name="logout_button_description" translatable="false">로그아웃 버튼</string>
     <string name="topbar_setting_description" translatable="false">설정 버튼</string>
     <string name="topbar_search_description" translatable="false">찾기 버튼</string>
-    basic_info_icon
 
-
+    <!-- ===================== -->
     <!-- Home Fragment -->
-    <string name="home_title" translatable="false">홈</string>
+    <!-- ===================== -->
     <string name="home_today_date_text" translatable="false">오늘 날짜가 표시됩니다.</string>
     <string name="home_selected_date_events_text" translatable="false">선택된 날짜의 이벤트가 표시됩니다.</string>
     <string name="home_start_work_button_text" translatable="false">출근하기</string>
     <string name="home_no_events" translatable="false">등록된 일정이 없습니다.</string>
 
+    <!-- ===================== -->
+    <!-- Review Fragment -->
+    <!-- ===================== -->
+    <string name="review_tab_progress" translatable="false">평가진행</string>
+    <string name="review_tab_status" translatable="false">평가현황</string>
+    <string name="review_tab_confirm" translatable="false">평가확정</string>
+
+    <!-- ===================== -->
+    <!-- Manager Fragment -->
+    <!-- ===================== -->
+    <string name="manager_tab_questionnaire" translatable="false">문항지</string>
+    <string name="manager_tab_job" translatable="false">직무</string>
+    <string name="manager_tab_measure" translatable="false">척도</string>
+    <string name="manager_questionnaire" translatable="false">문항지</string>
+    <string name="manager_job" translatable="false">직무</string>
+    <string name="manager_measure" translatable="false">척도</string>
+
+    <!-- ===================== -->
     <!-- Setting Fragment -->
-    <string name="mypage" translatable="false">설정</string>
-    <string name="mypage_login_register" translatable="false">로그인 및 회원가입</string>
-    <string name="mypage_basic_info" translatable="false">기본정보</string>
-    <string name="mypage_hr_info" translatable="false">인사정보</string>
+    <!-- ===================== -->
+    <string name="setting_login_register" translatable="false">로그인 및 회원가입</string>
+    <string name="setting_basic_info" translatable="false">기본정보</string>
+    <string name="setting_hr_info" translatable="false">인사정보</string>
 
     <!-- HR Info Fragment Strings -->
     <string name="hr_info_title" translatable="false">인사 정보</string>
@@ -63,12 +87,6 @@
     <string name="save" translatable="false">저장하기</string>
     <string name="modify" translatable="false">수정하기</string>
 
-    <!-- Review Fragment -->
-    <string name="review_title" translatable="false">인사평가</string>
-    <string name="review_tab_progress" translatable="false">평가진행</string>
-    <string name="review_tab_status" translatable="false">평가현황</string>
-    <string name="review_tab_confirm" translatable="false">평가확정</string>
-
     <!-- Login Screen -->
     <string name="login_title" translatable="false">로그인</string>
     <string name="login_btn" translatable="false">로그인</string>
@@ -76,7 +94,6 @@
     <string name="login_join_question" translatable="false">혹시, 오니모(Onymo)는 처음이신가요?</string>
     <string name="login_join" translatable="false">회원가입</string>
     <string name="login_error" translatable="false">계정 정보가 일치하지 않습니다.</string>
-
 
     <!-- Join Form -->
     <string name="join_form_title_first_top" translatable="false">이름을</string>

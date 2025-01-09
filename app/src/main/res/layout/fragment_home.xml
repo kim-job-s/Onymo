@@ -20,7 +20,7 @@
             android:id="@+id/topbar_title_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_title"
+            android:text="@string/title_home"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"

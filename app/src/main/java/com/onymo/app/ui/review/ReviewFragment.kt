@@ -8,9 +8,6 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
 import com.onymo.app.R
-import com.onymo.app.ui.review.tabs.ReviewConfirmFragment
-import com.onymo.app.ui.review.tabs.ReviewProgressFragment
-import com.onymo.app.ui.review.tabs.ReviewStatusFragment
 
 class ReviewFragment : Fragment() {
 

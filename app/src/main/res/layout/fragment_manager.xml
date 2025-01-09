@@ -9,7 +9,7 @@
 
     <!-- 상단바 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topbar_review"
+        android:id="@+id/topbar_manager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/topbar_height"
         android:padding="@dimen/padding_medium"
@@ -18,10 +18,10 @@
 
         <!-- 타이틀 -->
         <TextView
-            android:id="@+id/topbar_title_review"
+            android:id="@+id/topbar_title_manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_review"
+            android:text="@string/title_manager"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"
@@ -54,23 +54,23 @@
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
         app:tabGravity="fill"
-        app:layout_constraintTop_toBottomOf="@id/topbar_review"
+        app:layout_constraintTop_toBottomOf="@id/topbar_manager"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/review_tab_progress" />
+            android:text="@string/manager_tab_questionnaire" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/review_tab_status" />
+            android:text="@string/manager_tab_job" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/review_tab_confirm" />
+            android:text="@string/manager_measure" />
     </com.google.android.material.tabs.TabLayout>
 
     <!-- Fragment Container -->

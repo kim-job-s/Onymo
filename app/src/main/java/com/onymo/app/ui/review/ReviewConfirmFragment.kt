@@ -1,4 +1,4 @@
-package com.onymo.app.ui.review.tabs
+package com.onymo.app.ui.review
 
 import android.os.Bundle
 import android.view.LayoutInflater

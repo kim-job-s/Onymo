@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- 홈 타이틀 -->
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/topbar_title_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,13 +29,14 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <!-- 설정 버튼 -->
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/topbar_setting"
             android:layout_width="@dimen/icon_size_small"
             android:layout_height="@dimen/icon_size_small"
             android:src="@drawable/ic_topbar_settings_24px"
             android:contentDescription="@string/topbar_setting_description"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/rounded_ripple_effect"
+            android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -82,15 +83,16 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- 오늘 날짜 -->
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/today_date_text"
             style="@style/TodayDateTextStyle"
-            android:background="@drawable/today_date_background"
+            android:background="@drawable/rounded_today_date_background"
             android:gravity="center"
             android:text="@string/home_today_date_text"
             android:textSize="@dimen/text_size_body"
             android:textColor="@color/colorOnSurface"
             android:layout_marginRight="@dimen/margin_small"
+            android:elevation="@dimen/elevation_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +102,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/start_work_button"
             style="@style/StartWorkButtonStyle"
-            android:background="@drawable/start_work_button_background"
+            android:background="@drawable/rounded_start_work_button_background"
             android:text="@string/home_start_work_button_text"
             android:textSize="@dimen/text_size_body"
             android:textColor="@color/colorOnPrimary"
@@ -118,7 +120,7 @@
         android:layout_marginEnd="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_small"
         android:gravity="center"
-        android:text="@string/home_selected_date_events_text"
+        android:text="@string/home_selected_date_events"
         android:textSize="@dimen/text_size_body"
         android:textColor="@color/colorOnSurface"
         app:layout_constraintTop_toBottomOf="@id/today_date_and_button_container" />

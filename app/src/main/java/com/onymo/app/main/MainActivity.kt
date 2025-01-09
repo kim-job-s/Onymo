@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.onymo.app.R
+import com.onymo.app.ui.manager.ManagerFragment
 import com.onymo.app.ui.review.ReviewFragment
 import com.onymo.ui.home.HomeFragment
 
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.bottom_navigation_review -> {
                     menuItem.setIcon(R.drawable.ic_bottom_navigation_fill_thumb_up_24px)
                     switchFragment(ReviewFragment())
+                }
+                R.id.bottom_navigation_edit -> {
+                    menuItem.setIcon(R.drawable.ic_bottom_navigation_edit_square_24px)
+                    switchFragment(ManagerFragment())
                 }
             }
             true

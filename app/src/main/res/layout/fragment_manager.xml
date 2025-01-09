@@ -43,19 +43,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Tab Layout -->
+
+    <!-- Fragment Container -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorSurface"
+        app:layout_constraintTop_toBottomOf="@id/topbar_manager"
+        app:tabGravity="fill"
         app:tabIndicatorColor="@color/tabIndicatorColor"
-        app:tabSelectedTextColor="@color/tabSelectedTextColor"
-        app:tabTextColor="@color/tabUnselectedTextColor"
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:layout_constraintTop_toBottomOf="@id/topbar_manager"
-        tools:ignore="MissingConstraints">
+        app:tabSelectedTextColor="@color/tabSelectedTextColor"
+        app:tabTextColor="@color/tabUnselectedTextColor"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -70,10 +73,9 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/manager_measure" />
+            android:text="@string/manager_measure_title" />
     </com.google.android.material.tabs.TabLayout>
 
-    <!-- Fragment Container -->
     <FrameLayout
         android:id="@+id/tab_content"
         android:layout_width="match_parent"

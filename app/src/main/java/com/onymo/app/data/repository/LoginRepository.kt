@@ -1,6 +1,6 @@
-package com.onymo.app.repository
+package com.onymo.app.data.repository
 
-import com.onymo.app.model.User
+import com.onymo.app.data.model.User
 
 class LoginRepository {
 

@@ -1,4 +1,4 @@
-package com.onymo.app.model
+package com.onymo.app.data.model
 
 data class User (
     val name: String,

@@ -26,7 +26,7 @@
 
         <!-- Highlight Colors -->
         <item name="colorError">@color/colorError</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
 
         <!-- Text and Icon -->
         <item name="android:textColor">@color/colorOnSurface</item>
@@ -34,6 +34,14 @@
         <!-- Tab Colors -->
         <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
         <item name="tabSelectedTextColor">@color/tabSelectedTextColor</item>
+
+        <!-- 버튼 및 뷰의 기본 선택 배경 효과 -->
+        <item name="android:selectableItemBackground">@color/colorSecondary</item>
+        <item name="android:selectableItemBackgroundBorderless">?attr/selectableItemBackgroundBorderless</item>
+
+        <!-- Ripple Effect Color -->
+        <item name="selectableItemBackground">@drawable/rounded_ripple_effect</item>
+        <item name="selectableItemBackgroundBorderless">@drawable/rounded_ripple_effect</item>
     </style>
 
     <style name="Theme.Onymo" parent="Base.Theme.Onymo" />

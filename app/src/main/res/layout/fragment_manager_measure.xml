@@ -1,6 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
+    <LinearLayout
+        android:id="@+id/score_input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 척도 입력 -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/score_input"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="@string/manager_measure_input_hint"
+            android:textSize="@dimen/text_size_large_body"
+            android:textColor="@color/text_black"
+            android:inputType="number"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_score_input_background"/>
+
+        <!-- 점 표시 (텍스트) -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/score_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manager_measure_score_point"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/text_size_large_body"
+            android:textStyle="bold"
+            android:textColor="@color/text_black"
+            android:gravity="center" />
+
+        <!-- 추가 버튼 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add"
+            style="@style/AddScoreButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:text="@string/manager_measure_add_item" />
+    </LinearLayout>
+
+    <!-- 에러 메시지 -->
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:background="@drawable/rounded_error_background"
+        android:textColor="@color/errorTextColor"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/score_input_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_measure_outline_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/score_input_container"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

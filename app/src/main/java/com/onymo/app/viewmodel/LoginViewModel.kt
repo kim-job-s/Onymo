@@ -1,9 +1,9 @@
-package com.onymo.app.ui.setting.login
+package com.onymo.app.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.onymo.app.model.User
-import com.onymo.app.repository.LoginRepository
+import com.onymo.app.data.model.User
+import com.onymo.app.data.repository.LoginRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

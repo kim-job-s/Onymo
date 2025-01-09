@@ -35,7 +35,7 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_close_24px"
             android:contentDescription="@string/close_button_description"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/rounded_ripple_effect"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -49,6 +49,7 @@
         android:padding="@dimen/padding_large"
         android:clickable="true"
         android:focusable="true"
+        android:background="@drawable/rounded_setting_ripple_effect"
         app:layout_constraintTop_toBottomOf="@id/topbar_mypage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -85,6 +86,7 @@
         android:padding="@dimen/padding_large"
         android:clickable="true"
         android:focusable="true"
+        android:background="@drawable/rounded_setting_ripple_effect"
         app:layout_constraintTop_toBottomOf="@id/login_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -133,6 +135,7 @@
         android:padding="@dimen/padding_large"
         android:clickable="true"
         android:focusable="true"
+        android:background="@drawable/rounded_setting_ripple_effect"
         app:layout_constraintTop_toBottomOf="@id/basic_info"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">

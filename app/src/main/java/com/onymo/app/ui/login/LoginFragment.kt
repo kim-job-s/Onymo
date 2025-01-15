@@ -1,4 +1,4 @@
-package com.onymo.app.ui.setting.login
+package com.onymo.app.ui.login
 
 import android.os.Bundle
 import android.text.Editable
@@ -42,12 +42,12 @@ class LoginFragment : Fragment() {
 
         // 이메일 및 비밀번호 입력 필드 변경 감지
         binding.loginEditEmail.addTextChangedListener(textWatcher)
-        binding.loginEditPassword.addTextChangedListener(textWatcher)
+        binding.loginEditPw.addTextChangedListener(textWatcher)
 
         // 로그인 버튼 클릭 이벤트
         binding.loginBtn.setOnClickListener {
             val email = binding.loginEditEmail.text.toString()
-            val password = binding.loginEditPassword.text.toString()
+            val password = binding.loginEditPw.text.toString()
             viewModel.login(email, password)
         }
 
@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
         observeLoginResult()
 
         // 닫기 버튼 클릭 이벤트
-        binding.topbarCloseButton.setOnClickListener {
+        binding.loginCloseBtn.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
     }
@@ -64,7 +64,7 @@ class LoginFragment : Fragment() {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             val email = binding.loginEditEmail.text.toString().trim()
-            val password = binding.loginEditPassword.text.toString().trim()
+            val password = binding.loginEditPw.text.toString().trim()
             toggleLoginButton(email.isNotEmpty() && password.isNotEmpty())
         }
         override fun afterTextChanged(s: Editable?) {}

@@ -8,8 +8,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.onymo.app.R
-import com.onymo.app.ui.setting.hrinfo.HrInfoFragment
-import com.onymo.app.ui.setting.login.LoginFragment
+import com.onymo.app.ui.hrinfo.HrInfoFragment
+import com.onymo.app.ui.login.LoginFragment
 import com.onymo.app.viewmodel.LoginViewModel
 
 class SettingFragment : Fragment() {
@@ -30,7 +30,7 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 닫기 버튼 클릭 이벤트 설정
-        val closeButton: ImageButton = view.findViewById(R.id.topbar_close_button)
+        val closeButton: ImageButton = view.findViewById(R.id.login_close_btn)
         closeButton.setOnClickListener {
             parentFragmentManager.popBackStack() // 프래그먼트 스택에서 제거하여 이전 화면으로 돌아감
         }

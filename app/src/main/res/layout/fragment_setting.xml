@@ -30,12 +30,12 @@
 
         <!-- 닫기 버튼 -->
         <ImageButton
-            android:id="@+id/topbar_close_button"
+            android:id="@+id/login_close_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_close_24px"
             android:contentDescription="@string/close_button_description"
-            android:background="@drawable/rounded_ripple_effect"
+            android:background="@drawable/ripple_default"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

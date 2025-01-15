@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onymo.app.R
 import com.onymo.app.databinding.FragmentManagerMeasureBinding
-import com.onymo.app.ui.manager.adapter.ManagerMeasureAdapter
+import com.onymo.app.ui.adapter.ManagerMeasureAdapter
 import com.onymo.app.ui.manager.viewmodel.ManagerMeasureViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

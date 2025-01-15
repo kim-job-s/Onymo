@@ -21,7 +21,6 @@
     <!-- Description -->
     <!-- ===================== -->
     <string name="close_button_description" translatable="false">닫기 버튼</string>
-    <string name="topbar_setting_description" translatable="false">설정 버튼</string>
     <string name="topbar_search_description" translatable="false">찾기 버튼</string>
 
     <!-- ===================== -->
@@ -87,13 +86,6 @@
     <string name="hr_info_organization" translatable="false">조직</string>
     <string name="hr_info_job" translatable="false">직무</string>
     <string name="hr_info_position_duty" translatable="false">직위/직책</string>
-    <string name="hr_info_company_textInput_hint" translatable="false">회사명을 입력해주세요</string>
-    <string name="hr_info_company_location_textInput_hint" translatable="false">회사위치를 입력해주세요</string>
-    <string name="hr_info_company_registration_textInput_hint" translatable="false">사업자번호를 입력해주세요</string>
-    <string name="hr_info_organization_textInput_hint" translatable="false">조직명을 입력해주세요</string>
-    <string name="hr_info_employment_info_textInput_hint" translatable="false">계약정보를 선택해주세요</string>
-    <string name="hr_info_job_textInput_hint" translatable="false">직무를 입력해주세요</string>
-    <string name="hr_info_position_duty_textInput_hint" translatable="false">직위/직책을 입력해주세요</string>
 
     <!-- 계약정보 옵션 -->
     <string-array name="employment_type_options">

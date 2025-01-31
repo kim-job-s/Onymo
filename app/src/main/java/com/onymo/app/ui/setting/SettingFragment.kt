@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.onymo.app.R
 import com.onymo.app.ui.login.LoginFragment
 import com.onymo.app.ui.setting.hrinfo.HrInfoFragment
+
 class SettingFragment : Fragment() {
 
     private lateinit var companyNameTextView: TextView
@@ -28,6 +29,7 @@ class SettingFragment : Fragment() {
 
         // 닫기 버튼 클릭 이벤트 설정
         val closeButton: ImageButton = view.findViewById(R.id.close_btn)
+        
         closeButton.setOnClickListener {
             parentFragmentManager.popBackStack() // 프래그먼트 스택에서 제거하여 이전 화면으로 돌아감
         }

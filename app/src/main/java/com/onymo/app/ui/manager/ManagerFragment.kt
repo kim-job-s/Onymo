@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayout
 import com.onymo.app.R
 import com.onymo.app.databinding.FragmentManagerBinding
 import com.onymo.app.ui.manager.fragments.ManagerQuestionnaireFragment
+import com.onymo.app.ui.managerjob.ManagerJobFragment
 
 /**
  * ManagerFragment - TabLayout을 사용하여 문항지, 직무, 척도 탭을 관리하는 프래그먼트
@@ -33,7 +34,7 @@ class ManagerFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentManagerBinding.inflate(inflater, container, false) // View Binding 초기화
         return binding.root
     }
@@ -89,12 +90,6 @@ class ManagerFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 // 재선택 시 별도 처리 필요 시 구현
             }
-
-            /**
-             * onTabUnselected - 탭 선택이 해제되었을 때 호출
-             *
-             * @param tab 선택 해제된 Tab 객체
-             */
         })
     }
 

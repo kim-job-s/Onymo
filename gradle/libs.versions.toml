@@ -14,6 +14,8 @@ threetenabp = "1.4.8"
 appcompat = "1.7.0"
 lifecycleViewmodelKtx = "2.9.0-alpha08"
 materialVersion = "1.13.0-alpha09"
+databindingCommon = "8.10.0-alpha02"
+googleMaterial = "1.13.0-alpha10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +31,8 @@ threetenabp = { group = "com.jakewharton.threetenabp", name = "threetenabp", ver
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+androidx-databinding-common = { group = "androidx.databinding", name = "databinding-common", version.ref = "databindingCommon" }
+com-google-android-material-material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

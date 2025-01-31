@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.onymo.app.viewmodel.ManagerJobViewModel" />
+    </data>
+
+    <!-- ✅ `FrameLayout`을 최상위 컨테이너로 변경 -->
+    <FrameLayout
+        android:id="@+id/bottom_sheet_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:fitsSystemWindows="true">
+
+        <!-- ✅ 내부에서 스크롤 가능하도록 `NestedScrollView` 사용 -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 선택한 카드 정보 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/selected_card_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_background">
+
+                        <!-- 선택된 카드 제목 -->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/selected_card_title_topbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.selectedCardTitle}"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_on_surface"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <!-- 닫기 버튼 -->
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/close_btn"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_close_24px"
+                            android:contentDescription="닫기"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="@color/color_on_surface"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:onClick="@{() -> viewModel.hideBottomSheet()}" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- ✅ 중분류 리스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="중분류"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="4dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_manager_job_mid_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_manager_job_mid_category"
+                    android:nestedScrollingEnabled="false"/>
+
+                <!-- ✅ 소분류 리스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="소분류"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="4dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_manager_job_small_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_manager_job_small_category"
+                    android:nestedScrollingEnabled="false" />
+
+                <!-- ✅ 세분류 리스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="세분류"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="4dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_manager_job_detail_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_manager_job_detail_category"
+                    android:nestedScrollingEnabled="false" />
+
+                <!-- ✅ 능력단위 리스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="능력단위"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="4dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_manager_job_unit_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_manager_job_unit_category"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+</layout>

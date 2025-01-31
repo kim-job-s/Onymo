@@ -1,99 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 기본 색상: 브랜드 주요 색상 -->
+    <color name="color_primary">#007BFF</color> <!-- 기본 파란색 -->
+    <color name="color_primary_light">#4FC3F7</color> <!-- 밝은 파란색 -->
+    <color name="color_primary_dark">#174EA6</color> <!-- 어두운 파란색 -->
+    <color name="color_on_primary">#FFFFFF</color> <!-- 기본 색상 위 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Primary Color Palette -->
-    <!-- ===================== -->
-    <color name="colorPrimary">#1A73E8</color> <!-- 메인 파란색 (고유 톤) -->
-    <color name="colorPrimaryLight">#4FC3F7</color> <!-- 밝은 파란색 -->
-    <color name="colorPrimaryDark">#174EA6</color> <!-- 어두운 파란색 -->
-    <color name="colorAccent">#F9A825</color> <!-- 포인트 노란색 -->
+    <!-- 보조 색상: 추가적인 브랜드 색상 -->
+    <color name="color_secondary">#4A90E2</color> <!-- 하늘색 -->
+    <color name="color_secondary_light">#81D4FA</color> <!-- 밝은 하늘색 -->
+    <color name="color_secondary_dark">#1565C0</color> <!-- 어두운 하늘색 -->
+    <color name="color_on_secondary">#FFFFFF</color> <!-- 보조 색상 위 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Secondary Color Palette -->
-    <!-- ===================== -->
-    <color name="colorSecondary">#81D4FA</color> <!-- 연한 하늘색 -->
-    <color name="colorSecondaryLight">#D1F0FF</color> <!-- 더 밝은 하늘색 -->
-    <color name="colorSecondaryDark">#4A90E2</color> <!-- 어두운 하늘색 -->
+    <!-- 구분선 색상: UI 요소 분리 -->
+    <color name="color_divider">#E0E0E0</color> <!-- 기본 구분선 -->
+    <color name="color_divider_subtle">#D6D6D6</color> <!-- 부드러운 구분선 -->
+    <color name="color_divider_accent">#B0D4FF</color> <!-- 강조된 구분선 -->
+    <color name="color_divider_dark_mode">#3A3A3A</color> <!-- 다크 모드 구분선 -->
 
-    <!-- ===================== -->
-    <!-- Neutral Colors -->
-    <!-- ===================== -->
-    <color name="colorBackground">#FFFFFF</color> <!-- 배경 흰색 -->
-    <color name="colorSurface">#F2F2F2</color> <!-- 부드러운 회색 배경 -->
-    <color name="colorGray">#C4C4C4</color> <!-- 중립적인 회색 -->
-    <color name="colorGrayLight">#E0E0E0</color> <!-- 밝은 회색 -->
-    <color name="colorGrayDark">#757575</color> <!-- 어두운 회색 -->
-    <color name="colorNeutralLight">#E8E8E8</color> <!-- 더 밝은 회색 -->
-    <color name="colorNeutralDark">#616161</color> <!-- 더 어두운 회색 -->
-    <color name="colorOnPrimary">#FFFFFF</color> <!-- Primary 텍스트 흰색 -->
-    <color name="colorOnSecondary">#212121</color> <!-- Secondary 텍스트 검정 -->
-    <color name="colorOnSurface">#5F6368</color> <!-- 일반 텍스트 회색 -->
+    <!-- 중립 색상: 배경과 표면 색상 -->
+    <color name="color_background">#FFFFFF</color> <!-- 기본 배경 -->
+    <color name="color_surface">#F8F9FA</color> <!-- 표면 배경 -->
+    <color name="color_on_background">#212121</color> <!-- 배경 위 텍스트 -->
+    <color name="color_on_surface">#5F6368</color> <!-- 표면 위 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Highlight Colors -->
-    <!-- ===================== -->
-    <color name="colorSuccess">#34A853</color> <!-- 성공 표시 초록 -->
-    <color name="colorError">#EA4335</color> <!-- 오류 표시 빨강 -->
+    <!-- 하단 네비게이션 색상 -->
+    <!-- 라이트 테마 -->
+    <color name="color_bottom_nav_background_light">#FFFFFF</color> <!-- 네비게이션 배경 -->
+    <color name="color_bottom_nav_icon_active_light">#007BFF</color> <!-- 활성 아이콘 -->
+    <color name="color_bottom_nav_icon_inactive_light">#757575</color> <!-- 비활성 아이콘 -->
+    <color name="color_bottom_nav_text_active_light">#007BFF</color> <!-- 활성 텍스트 -->
+    <color name="color_bottom_nav_text_inactive_light">#757575</color> <!-- 비활성 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Tab Specific Colors -->
-    <!-- ===================== -->
-    <color name="tabIndicatorColor">#4FC3F7</color> <!-- 탭 Indicator 색상 -->
-    <color name="tabSelectedTextColor">#1A73E8</color> <!-- 선택된 탭 텍스트 -->
-    <color name="tabUnselectedTextColor">#9E9E9E</color> <!-- 선택되지 않은 탭 텍스트 -->
+    <!-- 다크 테마 -->
+    <color name="color_bottom_nav_background_dark">#121212</color> <!-- 네비게이션 배경 -->
+    <color name="color_bottom_nav_icon_active_dark">#4FC3F7</color> <!-- 활성 아이콘 -->
+    <color name="color_bottom_nav_icon_inactive_dark">#9E9E9E</color> <!-- 비활성 아이콘 -->
+    <color name="color_bottom_nav_text_active_dark">#4FC3F7</color> <!-- 활성 텍스트 -->
+    <color name="color_bottom_nav_text_inactive_dark">#9E9E9E</color> <!-- 비활성 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Calendar Colors -->
-    <!-- ===================== -->
-    <color name="highlightBackgroundColor">#FFF8E1</color> <!-- 배경 밝은 노란색 -->
-    <color name="highlightStrokeColor">#F57F17</color> <!-- 테두리 진한 노란색 -->
-    <color name="highlightTextColor">#C77800</color> <!-- 텍스트 색 진한 노란색 -->
-    <color name="weekendColor">#1565C0</color> <!-- 주말 텍스트 색상 -->
-    <color name="colorHoliday">#F44336</color> <!-- 공휴일 텍스트 색상 (빨간색 계열) -->
-    <color name="colorHolidayBackground">#FFF3E0</color> <!-- 공휴일 배경 색상 (밝은 주황색 계열) -->
-    <color name="colorSaturday">#2196F3</color> <!-- 파란색 (토요일) -->
-    <color name="colorSunday">#F44336</color> <!-- 빨간색 (일요일) -->
+    <!-- 버튼 색상: 기본, 비활성화, 외곽선 -->
+    <!-- 라이트 테마 -->
+    <color name="color_button_primary">#007BFF</color> <!-- 기본 버튼 배경 -->
+    <color name="color_button_primary_text">#FFFFFF</color> <!-- 기본 버튼 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Login Specific Colors -->
-    <!-- ===================== -->
-    <color name="loginBackgroundColor">#F7F9FC</color> <!-- 로그인 배경색 -->
-    <color name="loginButtonColor">#1E88E5</color> <!-- 로그인 버튼 색 -->
-    <color name="loginHintTextColor">#9E9E9E</color> <!-- 힌트 텍스트 색 -->
-    <color name="loginErrorTextColor">#E53935</color> <!-- 에러 메시지 텍스트 색 -->
-    <color name="loginTextColor">#212121</color> <!-- 일반 텍스트 색 -->
-    <color name="loginCheckboxTextColor">#616161</color> <!-- 체크박스 텍스트 색 -->
-    <color name="loginLinkColor">#64B5F6</color> <!-- 링크(회원가입) 텍스트 색 -->
+    <color name="color_button_secondary">#E0E0E0</color> <!-- 보조 버튼 배경 -->
+    <color name="color_button_secondary_text">#007BFF</color> <!-- 보조 버튼 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Custom Checkbox Color -->
-    <!-- ===================== -->
-    <color name="customCheckboxColor">#1E88E5</color> <!-- 체크박스 커스텀 색 -->
+    <color name="color_button_disabled">#BDBDBD</color> <!-- 비활성 버튼 배경 -->
+    <color name="color_button_disabled_text">#9E9E9E</color> <!-- 비활성 버튼 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Custom Status and NavigationBar Color -->
-    <!-- ===================== -->
-    <color name="colorStatusBar">#F2F2F2</color> <!-- 상태창 색상 -->
-    <color name="colorNavigationBar">#F2F2F2</color> <!-- 네비게이션 바 색상 -->
+    <color name="color_button_outline">#007BFF</color> <!-- 외곽선 버튼 테두리 -->
+    <color name="color_button_outline_text">#007BFF</color> <!-- 외곽선 버튼 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Common Specific Colors -->
-    <!-- ===================== -->
-    <color name="HintTextColor">#9E9E9E</color> <!-- 힌트 텍스트 색 -->
-    <color name="colorControlHighlight">#DADADA</color> <!-- 연한 회색 -->
+    <!-- 다크 테마 -->
+    <color name="color_button_primary_dark">#4FC3F7</color> <!-- 기본 버튼 배경 -->
+    <color name="color_button_primary_text_dark">#FFFFFF</color> <!-- 기본 버튼 텍스트 -->
 
-    <!-- ===================== -->
-    <!-- Text Colors -->
-    <!-- ===================== -->
-    <color name="text_white">#FFFFFF</color>
-    <color name="text_black">#000000</color>
-    <color name="text_gray">#757575</color> <!-- 밝은 회색 텍스트 -->
-    <color name="text_dark_gray">#424242</color> <!-- 어두운 회색 텍스트 -->
+    <color name="color_button_secondary_dark">#424242</color> <!-- 보조 버튼 배경 -->
+    <color name="color_button_secondary_text_dark">#4FC3F7</color> <!-- 보조 버튼 텍스트 -->
 
-    <!-- Error Colors -->
-    <color name="errorTextColor">#D32F2F</color> <!-- 텍스트 진한 빨간색 -->
-    <color name="errorBackgroundColor">#FFEBEE</color> <!-- 배경 밝은 빨간색 -->
-    <color name="errorBorderColor">#F44336</color> <!-- 테두리 붉은색 -->
+    <color name="color_button_disabled_dark">#616161</color> <!-- 비활성 버튼 배경 -->
+    <color name="color_button_disabled_text_dark">#9E9E9E</color> <!-- 비활성 버튼 텍스트 -->
 
+    <color name="color_button_outline_dark">#4FC3F7</color> <!-- 외곽선 버튼 테두리 -->
+    <color name="color_button_outline_text_dark">#4FC3F7</color> <!-- 외곽선 버튼 텍스트 -->
+
+    <!-- 헤더 색상 -->
+    <color name="color_header_background">#007BFF</color> <!-- 헤더 배경 -->
+    <color name="color_header_background_dark">#174EA6</color> <!-- 다크 모드 헤더 배경 -->
+
+    <!-- 강조 색상 -->
+    <color name="color_accent">#FFC107</color> <!-- 강조 노란색 -->
+    <color name="color_on_accent">#212121</color> <!-- 강조 색상 위 텍스트 -->
+
+    <!-- 상태 및 오류 색상 -->
+    <color name="color_success">#34A853</color> <!-- 성공 초록색 -->
+    <color name="color_error">#D32F2F</color> <!-- 오류 빨간색 -->
+    <color name="color_on_error">#FFFFFF</color> <!-- 오류 색상 위 텍스트 -->
+
+    <!-- 텍스트 색상 -->
+    <color name="color_text_primary">#212121</color> <!-- 기본 텍스트 -->
+    <color name="color_text_secondary">#757575</color> <!-- 보조 텍스트 -->
+    <color name="color_text_hint">#9E9E9E</color> <!-- 힌트 텍스트 -->
+    <color name="color_text_disabled">#BDBDBD</color> <!-- 비활성 텍스트 -->
+    <color name="color_text_inverted">#FFFFFF</color> <!-- 반전 텍스트 -->
+
+    <!-- 캘린더 색상 -->
+    <color name="color_calendar_weekend">#1565C0</color> <!-- 주말 텍스트 -->
+    <color name="color_calendar_holiday">#F44336</color> <!-- 공휴일 텍스트 -->
+    <color name="color_calendar_holiday_background">#FFF3E0</color> <!-- 공휴일 배경 -->
+    <color name="color_calendar_today">#007BFF</color> <!-- 오늘 강조 -->
+
+    <!-- Ripple 효과 색상 -->
+    <color name="color_ripple_light">#E0E0E0</color> <!-- 밝은 Ripple -->
+    <color name="color_ripple_primary_light">#B3D7FF</color> <!-- 기본 Ripple -->
+    <color name="color_ripple_secondary_light">#B3E5FC</color> <!-- 보조 Ripple -->
+
+    <color name="color_ripple_dark">#424242</color> <!-- 어두운 Ripple -->
+    <color name="color_ripple_primary_dark">#81D4FA</color> <!-- 기본 Ripple -->
+    <color name="color_ripple_secondary_dark">#64B5F6</color> <!-- 보조 Ripple -->
+
+    <!-- 선택되지 않은 상태 색상 -->
+    <color name="color_unselected">#5F6368</color> <!-- 선택되지 않은 기본 -->
+    <color name="color_unselected_dark">#616161</color> <!-- 다크 모드 선택되지 않음 -->
+
+    <!-- 상태 표시줄 및 네비게이션 색상 -->
+    <color name="color_status_bar">#0056B3</color> <!-- 상태 표시줄 색상 -->
+    <color name="color_navigation_bar">#FFFFFF</color> <!-- 네비게이션 바 기본 색상 -->
+    <color name="color_navigation_bar_dark">#121212</color> <!-- 네비게이션 바 다크 모드 -->
+
+    <!-- 탭 색상 -->
+    <color name="color_tab_indicator">#007BFF</color> <!-- 탭 인디케이터 -->
+    <color name="color_tab_selected_text">#1A73E8</color> <!-- 선택된 텍스트 -->
+    <color name="color_tab_unselected_text">#9E9E9E</color> <!-- 선택되지 않은 텍스트 -->
+
+    <!-- 오류 배경 -->
+    <color name="color_error_background">#FFEBEE</color> <!-- 오류 배경 -->
+
+    <!-- 스낵바 및 토스트 색상 -->
+    <color name="color_snackbar_background">#323232</color> <!-- 스낵바 배경 -->
+    <color name="color_snackbar_text">#FFFFFF</color> <!-- 스낵바 텍스트 -->
+
+    <!-- 진행 상태 색상 -->
+    <color name="color_progress_bar">#4A90E2</color> <!-- 진행 바 -->
+
+    <!-- 그림자 색상 -->
+    <color name="color_shadow_light">#D1D1D1</color> <!-- 밝은 그림자 -->
+    <color name="color_shadow_dark">#000000</color> <!-- 어두운 그림자 -->
+
+    <!-- 다이얼로그 색상 -->
+    <color name="color_dialog_background">#FFFFFF</color> <!-- 다이얼로그 배경 -->
+    <color name="color_dialog_background_dark">#1E1E1E</color> <!-- 다크 모드 다이얼로그 배경 -->
+
+    <!-- 툴팁 색상 -->
+    <color name="color_tooltip_background">#616161</color> <!-- 툴팁 배경 -->
+    <color name="color_tooltip_text">#FFFFFF</color> <!-- 툴팁 텍스트 -->
+
+    <!-- 하이라이트 색상 -->
+    <color name="color_highlight">#FF4081</color> <!-- 강조색 -->
+
+    <!-- 차트 및 그래프 색상 -->
+    <color name="color_chart_primary">#007BFF</color> <!-- 주요 차트 라인 -->
+    <color name="color_chart_secondary">#FFC107</color> <!-- 보조 차트 라인 -->
+    <color name="color_chart_highlight">#34A853</color> <!-- 강조 차트 포인트 -->
+
+    <!-- 알림 색상 -->
+    <color name="color_notification_background">#FFCCBC</color> <!-- 알림 배경 -->
+    <color name="color_notification_text">#000000</color> <!-- 알림 텍스트 -->
+
+    <!-- 플레이스홀더 및 로딩 색상 -->
+    <color name="color_placeholder">#E0E0E0</color> <!-- 플레이스홀더 -->
+    <color name="color_loading_background">#F5F5F5</color> <!-- 로딩 배경 -->
 </resources>

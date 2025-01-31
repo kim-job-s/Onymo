@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="46dp"
+    android:viewportWidth="40"
+    android:viewportHeight="46">
+
+  <!-- 첫 번째 경로 -->
+  <path
+      android:pathData="M18.367,35.102h3.266v11.021h-3.266z"
+      android:fillColor="@color/color_primary" />
+
+  <!-- 두 번째 경로 -->
+  <path
+      android:pathData="M7.754,42.857h24.49v3.266h-24.49z"
+      android:fillColor="@color/color_primary" />
+
+  <!-- 세 번째 경로 -->
+  <path
+      android:pathData="M11.522,27.275l-2.361,-2.255l6.912,-7.24l5.291,4.811l7.95,-8.035l2.321,2.297l-10.152,10.26l-5.249,-4.772z"
+      android:fillColor="@color/color_accent" />
+
+  <!-- 네 번째 경로 -->
+  <path
+      android:pathData="M40,37.551l-40,0l0,-37.552l31.02,0l0,3.265l-27.755,0l0,31.022l33.469,0l0,-34.056l3.266,0z"
+      android:fillColor="@color/color_primary" />
+
+  <!-- 다섯 번째 경로 -->
+  <path
+      android:pathData="M1.632,7.648h36.734v3.266h-36.734z"
+      android:fillColor="@color/color_primary" />
+</vector>

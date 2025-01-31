@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
 import com.onymo.app.R
+import com.onymo.app.R.*
 
 class ReviewFragment : Fragment() {
 
@@ -16,7 +17,7 @@ class ReviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_review, container, false)
+        return inflater.inflate(layout.fragment_review, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

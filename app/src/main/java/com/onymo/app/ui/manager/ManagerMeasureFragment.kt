@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onymo.app.R
 import com.onymo.app.databinding.FragmentManagerMeasureBinding
-import com.onymo.app.ui.manager.adapter.ManagerMeasureAdapter
+import com.onymo.app.ui.manager.adapter.ManagerMeasureRecyclerAdapter
 import com.onymo.app.ui.manager.viewmodel.ManagerMeasureViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -24,7 +24,7 @@ class ManagerMeasureFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: ManagerMeasureViewModel
-    private lateinit var adapter: ManagerMeasureAdapter
+    private lateinit var adapter: ManagerMeasureRecyclerAdapter
 
     /**
      * onCreateView - 프래그먼트 레이아웃 초기화
@@ -62,7 +62,7 @@ class ManagerMeasureFragment : Fragment() {
      * setupRecyclerView - RecyclerView 초기화
      */
     private fun setupRecyclerView() {
-        adapter = ManagerMeasureAdapter(
+        adapter = ManagerMeasureRecyclerAdapter(
             outlineItems = emptyList(),
             onMoveUp = { position -> viewModel.moveOutlineUp(position) }, // 위로 이동 콜백
             onMoveDown = { position -> viewModel.moveOutlineDown(position) }, // 아래로 이동 콜백
@@ -71,8 +71,8 @@ class ManagerMeasureFragment : Fragment() {
                 viewModel.innerMeasureItemsMap.value[outlineId] ?: emptyList()
             }
         )
-        binding.recyclerMeasureOutlineItems.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerMeasureOutlineItems.adapter = adapter
+        binding.recyclerManagerMeasureOutlineItems.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerManagerMeasureOutlineItems.adapter = adapter
     }
 
     /**
@@ -81,7 +81,7 @@ class ManagerMeasureFragment : Fragment() {
     private fun observeViewModel() {
         lifecycleScope.launch {
             viewModel.outlineItems.collectLatest { outlines ->
-                adapter = ManagerMeasureAdapter(
+                adapter = ManagerMeasureRecyclerAdapter(
                     outlineItems = outlines,
                     onMoveUp = { position -> viewModel.moveOutlineUp(position) }, // 위로 이동 콜백
                     onMoveDown = { position -> viewModel.moveOutlineDown(position) }, // 아래로 이동 콜백
@@ -91,7 +91,7 @@ class ManagerMeasureFragment : Fragment() {
                     }
                 )
                 adapter.notifyDataSetChanged()
-                binding.recyclerMeasureOutlineItems.adapter = adapter
+                binding.recyclerManagerMeasureOutlineItems.adapter = adapter
             }
         }
     }

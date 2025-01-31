@@ -9,16 +9,16 @@
 
     <!-- 상단바 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topbar_manager"
+        android:id="@+id/manager_topbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:background="@color/color_background"
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- 타이틀 -->
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/topbar_title_manager"
+            android:id="@+id/manager_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_manager"
@@ -31,7 +31,7 @@
 
         <!-- 검색 버튼 -->
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/topbar_search"
+            android:id="@+id/search"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_topbar_search_24px"
@@ -45,11 +45,11 @@
 
     <!-- 구분선 -->
     <View
-        android:id="@+id/topbar_divider"
+        android:id="@+id/mypage_topbar_divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/color_divider"
-        app:layout_constraintTop_toBottomOf="@id/topbar_manager"
+        app:layout_constraintTop_toBottomOf="@id/manager_topbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_background"
-        app:layout_constraintTop_toBottomOf="@id/topbar_divider"
+        app:layout_constraintTop_toBottomOf="@id/mypage_topbar_divider"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/color_tab_indicator"
         app:tabIndicatorHeight="4dp"

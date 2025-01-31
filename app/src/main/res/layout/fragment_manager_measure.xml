@@ -1,8 +1,8 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp">
 
     <LinearLayout
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -20,36 +20,39 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/score_input"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_weight="1"
-            android:hint="@string/manager_measure_input_hint"
-            android:textSize="@dimen/text_size_large_body"
-            android:textColor="@color/text_black"
+            android:background="@drawable/bg_score_input"
+            android:gravity="center_vertical"
             android:inputType="number"
             android:padding="8dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/rounded_score_input_background"/>
+            android:textColor="@color/color_on_surface"
+            android:textSize="12sp" />
 
         <!-- 점 표시 (텍스트) -->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/score_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/manager_measure_score_point"
+            android:text="점"
             android:layout_marginStart="8dp"
-            android:textSize="@dimen/text_size_large_body"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@color/text_black"
+            android:textColor="@color/color_on_surface"
             android:gravity="center" />
 
         <!-- 추가 버튼 -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_add"
-            style="@style/AddScoreButtonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:text="@string/manager_measure_add_item" />
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/btn_bg_add"
+            android:elevation="8dp"
+            android:text="추가하기"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_on_primary"/>
     </LinearLayout>
 
     <!-- 에러 메시지 -->
@@ -59,9 +62,9 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:padding="8dp"
-        android:background="@drawable/rounded_error_background"
-        android:textColor="@color/errorTextColor"
-        android:textSize="14sp"
+        android:background="@drawable/bg_error_message_box"
+        android:textColor="@color/color_error"
+        android:textSize="12sp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/score_input_container"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,10 +72,11 @@
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_measure_outline_items"
+        android:id="@+id/recycler_manager_measure_outline_items"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintTop_toBottomOf="@id/score_input_container"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_manager_measure_outline"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

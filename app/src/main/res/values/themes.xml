@@ -46,8 +46,8 @@
 
         <!-- Selectable Background -->
         <item name="selectableItemBackground">@color/color_primary</item>
-        <item name="selectableItemBackgroundBorderless">?attr/selectableItemBackgroundBorderless</item>
 
+        <!-- Bottom Navigation -->
         <item name="bottomNavigationStyle">@style/Widget.MyApp.BottomNavigation</item>
     </style>
 

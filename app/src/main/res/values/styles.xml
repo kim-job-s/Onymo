@@ -3,8 +3,8 @@
 
     <!-- 바텀 네비게이션 클릭 스타일 -->
     <style name="BottomNavigationActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/color_primary</item> <!-- 활성 상태 배경 색상 -->
-        <item name="android:radius">20dp</item> <!-- 둥근 모서리 -->
+        <item name="android:color">@color/color_background</item> <!-- 활성 상태 배경 색상 -->
+        <item name="android:radius">10dp</item> <!-- 둥근 모서리 -->
     </style>
 
     <!-- 캘린더의 날짜(Day)의 스타일 설정 -->
@@ -29,42 +29,8 @@
         <item name="android:textColor">@color/color_primary</item>
     </style>
 
-    <!-- 커스텀 버튼 스타일 -->
-    <style name="CustomRoundedButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:background">@drawable/rounded_button_background</item>
-        <item name="android:textColor">@color/text_white</item>
-        <item name="android:padding">@dimen/padding_small</item>
-        <item name="android:layout_margin">@dimen/margin_small</item>
-        <item name="android:textSize">@dimen/text_size_body</item>
+    <style name="BottomSheetDialogTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-
-    <style name="CustomRoundedButton.Disabled">
-        <item name="android:background">@color/colorGray</item> <!-- 비활성화 배경 -->
-        <item name="android:textColor">@color/text_gray</item> <!-- 비활성화 텍스트 -->
-    </style>
-
-    <style name="TextInputErrorStyle">
-        <item name="android:textColor">@color/errorTextColor</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:background">@drawable/rounded_error_background</item>
-        <item name="android:padding">8dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-    </style>
-
-    <!-- 추가하기 버튼 스타일 -->
-    <style name="AddScoreButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/rounded_add_button_background</item>
-        <item name="android:textSize">@dimen/text_size_body</item>
-        <!-- 텍스트 색 -->
-        <item name="android:textColor">@color/text_white</item>
-        <item name="android:elevation">@dimen/elevation_button</item>
-    </style>
-
-    <style name="RoundedEditTextStyle">
-        <item name="android:background">@drawable/rounded_score_input_background</item>
-        <item name="android:textSize">@dimen/text_size_body</item>
-        <item name="android:textColor">@color/text_black</item>
-        <item name="android:padding">@dimen/padding_medium</item>
-    </style>
-
 </resources>

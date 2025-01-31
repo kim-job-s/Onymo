@@ -1,4 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/color_ripple_light">
-    <item android:drawable="@android:color/transparent" />
+    android:color="@color/color_ripple_primary_light">
+
+    <!-- 리플 효과 마스크 -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" /> <!-- 모서리를 둥글게 처리 -->
+            <solid android:color="@color/color_ripple_primary_light" />
+        </shape>
+    </item>
 </ripple>

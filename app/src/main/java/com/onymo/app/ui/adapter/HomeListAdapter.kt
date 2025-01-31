@@ -65,6 +65,11 @@ class HomeListAdapter(
         val eventDateTextView: TextView = view.findViewById(R.id.event_date)
         val eventTimeTextView: TextView = view.findViewById(R.id.event_time)
 
+        // 날짜와 시간을 분리
+        val dateAndTime = event.time.split(" ")
+        val date = dateAndTime.getOrNull(0) ?: "" // 날짜 부분
+        val time = dateAndTime.getOrNull(1)?.plus(" ${dateAndTime.getOrNull(2) ?: ""}")?.trim() ?: "" // 시간 부분
+
         // 데이터 바인딩
         eventTitleTextView.text = event.title
         eventDateTextView.text = "날짜: ${event.time.split(" ")[0]}" // 시간에서 날짜 부분만 사용

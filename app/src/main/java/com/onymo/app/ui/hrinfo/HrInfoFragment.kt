@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.onymo.app.R
 import com.onymo.app.databinding.FragmentHrInfoBinding
+import com.onymo.app.ui.setting.SettingFragment
 
 class HrInfoFragment : Fragment() {
 
@@ -38,6 +39,11 @@ class HrInfoFragment : Fragment() {
 
         // UI 요소와 상호작용 리스너 설정
         setupListeners()
+
+        // 닫기 버튼 클릭 이벤트 처리
+        binding.closeBtn.setOnClickListener {
+            navigateToMypage() // 이전 페이지로 이동
+        }
     }
 
     override fun onDestroyView() {
@@ -166,4 +172,13 @@ class HrInfoFragment : Fragment() {
         button.setBackgroundResource(backgroundRes)
     }
 
+    /**
+     * navigateToMypage - 이전 페이지(마이페이지)로 이동
+     */
+    private fun navigateToMypage() {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, SettingFragment()) // 마이페이지 프래그먼트로 교체
+            .addToBackStack(null) // 뒤로가기 지원
+            .commit()
+    }
 }

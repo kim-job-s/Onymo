@@ -30,7 +30,7 @@
 
         <!-- 닫기 버튼 -->
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/login_close_btn"
+            android:id="@+id/close_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_close_24px"
@@ -110,7 +110,7 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_login_button_background"
+        android:background="@drawable/btn_bg_login_selector"
         android:backgroundTint="@color/color_primary"
         android:textSize="12sp"
         android:textStyle="bold"

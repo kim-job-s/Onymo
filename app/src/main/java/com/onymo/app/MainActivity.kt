@@ -1,13 +1,11 @@
-package com.onymo.app.main;
+package com.onymo.app;
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.onymo.app.R
+import com.onymo.app.ui.home.HomeFragment
 import com.onymo.app.ui.manager.ManagerFragment
 import com.onymo.app.ui.review.ReviewFragment
-import com.onymo.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     switchFragment(ReviewFragment())
                 }
                 R.id.bottom_navigation_edit -> {
-                    menuItem.setIcon(R.drawable.ic_bottom_navigation_edit_square_24px)
+                    menuItem.setIcon(R.drawable.ic_bottom_navigation_fill_edit_square_24px)
                     switchFragment(ManagerFragment())
                 }
             }

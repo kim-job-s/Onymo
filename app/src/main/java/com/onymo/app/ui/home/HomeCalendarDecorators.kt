@@ -1,7 +1,9 @@
 package com.onymo.app.ui.home
 
 import android.content.Context
+import android.graphics.Typeface
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import androidx.core.content.ContextCompat
 import com.onymo.app.R
 import com.prolificinteractive.materialcalendarview.CalendarDay
@@ -39,6 +41,11 @@ object HomeCalendarDecorators {
 
             override fun decorate(view: DayViewFacade) {
                 todayDrawable?.let { view.setBackgroundDrawable(it) }
+
+                // 텍스트 색상과 스타일 추가
+                view.addSpan(ForegroundColorSpan(ContextCompat.getColor(context, R.color.color_on_primary))) // 텍스트 색상 흰색
+                view.addSpan(StyleSpan(Typeface.BOLD)) // 텍스트 볼드 처리
+
             }
         }
     }

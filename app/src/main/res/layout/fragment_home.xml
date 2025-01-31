@@ -43,6 +43,16 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- 구분선 -->
+    <View
+        android:id="@+id/topbar_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/color_divider"
+        app:layout_constraintTop_toBottomOf="@id/home_topbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- 라운드된 배경을 가진 캘린더 컨테이너 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_calendar_container"
@@ -61,6 +71,8 @@
             android:id="@+id/home_calendar_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
             app:mcv_showOtherDates="all"
             app:mcv_selectionColor="@color/color_primary"
             app:mcv_leftArrowMask="@drawable/ic_arrow_back_ios_24px"
@@ -112,7 +124,6 @@
             android:textColor="@color/color_on_primary"
             android:textStyle="bold"
             android:textSize="12sp"
-            android:elevation="8dp"
             android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hr_info_topbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:background="@color/color_background"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,7 +30,7 @@
 
         <!-- 닫기 버튼 -->
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/login_close_btn"
+            android:id="@+id/close_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_close_24px"

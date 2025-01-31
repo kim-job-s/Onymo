@@ -30,7 +30,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:background="@color/color_background"
         app:menu="@menu/bottom_navigation_items"
         app:itemIconTint="@color/selector_bottom_navigation_icon"
@@ -39,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:itemActiveIndicatorStyle="@style/BottomNavigationActiveIndicator"
-        app:labelVisibilityMode="labeled" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:labelVisibilityMode="labeled"
+        android:fitsSystemWindows="true"/>
 
+</androidx.constraintlayout.widget.ConstraintLayout>

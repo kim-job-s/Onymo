@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ✅ 선택된 상태일 때 (선택한 카드 유지 효과) -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="@color/color_ripple_primary_light" /> <!-- 선택된 상태 배경색 -->
+        </shape>
+    </item>
+
+    <!-- ✅ 눌린 상태일 때 (기본 리플 효과) -->
+    <item android:state_pressed="true">
+        <ripple android:color="@color/color_ripple_primary_light">
+            <item android:id="@android:id/mask">
+                <shape android:shape="rectangle">
+                    <corners android:radius="16dp" />
+                    <solid android:color="@color/color_ripple_primary_light" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+
+    <!-- ✅ 기본 상태 (투명 배경 유지) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="@android:color/transparent" /> <!-- 기본 배경 투명 -->
+        </shape>
+    </item>
+
+</selector>

@@ -4,75 +4,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSurface">
+    android:background="@color/color_background">
 
     <!-- 상단바 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topbar_mypage"
+        android:id="@+id/mypage_topbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/topbar_height"
-        android:padding="@dimen/padding_medium"
-        android:background="@color/colorSurface"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/color_background"
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- 타이틀 -->
-        <TextView
-            android:id="@+id/topbar_title_mypage"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mypage_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_setting"
-            android:textSize="@dimen/text_size_title"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="@color/color_on_surface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <!-- 닫기 버튼 -->
-        <ImageButton
-            android:id="@+id/login_close_btn"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/close_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_close_24px"
-            android:contentDescription="@string/close_button_description"
+            android:contentDescription="닫기"
             android:background="@drawable/ripple_default"
+            android:tint="@color/color_on_surface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 구분선 -->
+    <View
+        android:id="@+id/mypage_topbar_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/color_divider"
+        app:layout_constraintTop_toBottomOf="@id/mypage_topbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- 로그인 및 회원가입 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_large"
+        android:padding="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/rounded_setting_ripple_effect"
-        app:layout_constraintTop_toBottomOf="@id/topbar_mypage"
+        android:background="@drawable/ripple_default"
+        app:layout_constraintTop_toBottomOf="@id/mypage_topbar_divider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/menu_login_register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/setting_login_register"
-            android:textSize="@dimen/text_size_subtitle"
-            android:textColor="@color/colorOnSurface"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_on_surface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/login_register_arrow" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/login_register_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
             android:drawableEnd="@drawable/ic_login_24px"
             android:gravity="end|center_vertical"
-            android:paddingEnd="@dimen/margin_small"
+            android:drawableTint="@color/color_on_surface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -83,43 +96,46 @@
         android:id="@+id/basic_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_large"
+        android:padding="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/rounded_setting_ripple_effect"
+        android:background="@drawable/ripple_default"
         app:layout_constraintTop_toBottomOf="@id/login_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/basic_info_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_face_24px"
             android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_face_24px"
+            android:tint="@color/color_on_surface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/menu_basic_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/setting_basic_info"
-            android:textSize="@dimen/text_size_subtitle"
-            android:textColor="@color/colorOnSurface"
             android:layout_marginStart="8dp"
+            android:text="@string/setting_basic_info"
+            android:textSize="14sp"
+            android:textColor="@color/color_on_surface"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/basic_info_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/basic_info_arrow" />
 
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/basic_info_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_arrow_forward_24px"
+            android:drawableTint="@color/color_on_surface"
             android:gravity="end|center_vertical"
             android:paddingEnd="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
@@ -132,44 +148,47 @@
         android:id="@+id/hr_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_large"
+        android:padding="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/rounded_setting_ripple_effect"
+        android:background="@drawable/ripple_default"
         app:layout_constraintTop_toBottomOf="@id/basic_info"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/hr_info_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_person_24px"
             android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_person_24px"
+            android:tint="@color/color_on_surface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/menu_hr_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/setting_hr_info"
-            android:textSize="@dimen/text_size_subtitle"
-            android:textColor="@color/colorOnSurface"
             android:layout_marginStart="8dp"
+            android:text="@string/setting_hr_info"
+            android:textSize="14sp"
+            android:textColor="@color/color_on_surface"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/hr_info_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/hr_info_arrow" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/hr_info_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_arrow_forward_24px"
             android:gravity="end|center_vertical"
-            android:paddingEnd="@dimen/margin_small"
+            android:paddingEnd="8dp"
+            android:drawableTint="@color/color_on_surface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

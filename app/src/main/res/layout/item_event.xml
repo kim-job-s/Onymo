@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/bg_today_date"
+    android:orientation="horizontal"> <!-- 수평 방향 레이아웃 -->
+
+    <!-- 일정 아이콘 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/event_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_today_24px"
+        app:tint="@color/color_on_surface"
+        android:layout_gravity="center_vertical" />
+
+    <!-- 텍스트 정보 컨테이너 -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="10dp">
+
+        <!-- 일정 제목 -->
+        <TextView
+            android:id="@+id/event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_text_primary" />
+
+        <!-- 일정 날짜 -->
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="날짜: 2025-01-16"
+            android:textSize="12sp"
+            android:textColor="@color/color_text_secondary" />
+
+        <!-- 일정 시간 -->
+        <TextView
+            android:id="@+id/event_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시간: 12:00 PM"
+            android:textSize="12sp"
+            android:textColor="@color/color_text_secondary" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

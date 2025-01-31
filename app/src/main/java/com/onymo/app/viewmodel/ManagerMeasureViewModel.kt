@@ -93,5 +93,4 @@ class ManagerMeasureViewModel : ViewModel() {
             _outlineItems.value = outlines
         }
     }
-
 }

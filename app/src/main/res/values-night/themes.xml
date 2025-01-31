@@ -5,33 +5,56 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
         <!-- Primary Colors -->
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimary">@color/color_primary_dark</item>
+        <item name="colorPrimaryVariant">@color/color_primary_light</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
 
         <!-- Secondary Colors -->
-        <item name="colorSecondary">@color/colorSecondaryDark</item>
-        <item name="colorSecondaryVariant">@color/colorSecondary</item>
-        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorSecondary">@color/color_secondary_dark</item>
+        <item name="colorSecondaryVariant">@color/color_secondary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
 
         <!-- Background and Surface -->
-        <item name="android:colorBackground">@color/colorNeutralDark</item>
-        <item name="colorSurface">@color/colorNeutralDark</item>
-        <item name="colorOnSurface">@color/colorNeutralLight</item>
+        <item name="android:colorBackground">@color/color_navigation_bar_dark</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
 
-        <!-- Status Bar -->
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <!-- Accent Colors -->
+        <item name="colorAccent">@color/color_accent</item>
 
-        <!-- Highlight Colors -->
-        <item name="colorError">@color/colorError</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Status Bar and Navigation Bar -->
+        <item name="android:statusBarColor">@color/color_primary_dark</item>
+        <item name="android:navigationBarColor">@color/color_navigation_bar_dark</item>
 
         <!-- Text and Icon -->
-        <item name="android:textColor">@color/colorNeutralLight</item>
+        <item name="android:textColor">@color/color_text_inverted</item>
 
         <!-- Tab Colors -->
-        <item name="tabIndicatorColor">@color/colorPrimaryLight</item>
-        <item name="tabSelectedTextColor">@color/colorPrimary</item>
+        <item name="tabIndicatorColor">@color/color_tab_indicator</item>
+        <item name="tabSelectedTextColor">@color/color_tab_selected_text</item>
+
+        <!-- Ripple Effect -->
+        <item name="colorControlHighlight">@color/color_ripple_dark</item>
+        <item name="android:selectableItemBackground">@drawable/ripple_default</item>
+        <item name="android:selectableItemBackgroundBorderless">@drawable/ripple_default</item>
+
+        <!-- Buttons -->
+        <item name="colorButtonNormal">@color/color_button_primary_dark</item>
+        <item name="colorControlNormal">@color/color_button_secondary_dark</item>
+
+        <!-- Selectable Background -->
+        <item name="selectableItemBackground">@color/color_primary_dark</item>
+
+        <!-- Bottom Navigation -->
+        <item name="bottomNavigationStyle">@style/Widget.MyApp.BottomNavigation</item>
     </style>
+
+    <style name="Widget.MyApp.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemBackground">@color/color_bottom_nav_background_dark</item>
+        <item name="itemIconTint">@color/color_bottom_nav_icon_active_dark</item>
+        <item name="itemTextColor">@color/color_bottom_nav_text_active_dark</item>
+    </style>
+
+    <style name="Theme.Onymo" parent="Base.Theme.Onymo" />
 </resources>

@@ -17,7 +17,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-}7
+}
 
 rootProject.name = "Onymo"
 include(":app")

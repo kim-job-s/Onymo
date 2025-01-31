@@ -21,7 +21,6 @@
     <!-- Description -->
     <!-- ===================== -->
     <string name="close_button_description" translatable="false">닫기 버튼</string>
-    <string name="topbar_setting_description" translatable="false">설정 버튼</string>
     <string name="topbar_search_description" translatable="false">찾기 버튼</string>
 
     <!-- ===================== -->
@@ -54,10 +53,7 @@
     <string name="manager_job" translatable="false">직무</string>
     <string name="manager_measure_title" translatable="false">척도</string>
     <string name="manager_measure_point_title" translatable="false">점수 척도</string>
-    <string name="manager_measure_add_item" translatable="false">추가하기</string>
     <string name="manager_measure_remove_item" translatable="false">삭제</string>
-    <string name="manager_measure_input_hint" translatable="false">척도 입력</string>
-    <string name="manager_measure_score_point" translatable="false">점</string>
     <string name="manager_measure_error_invalid_number" translatable="false">유효한 숫자를 입력하세요</string>
     <string name="manager_measure_error_number_too_large" translatable="false">10 이하의 숫자만 입력 가능합니다.</string>
 
@@ -65,8 +61,6 @@
     <!-- Manager Fragment -->
     <!-- ===================== -->
     <!-- 버튼 설명 -->
-    <string name="arrow_up_description" translatable="false">항목 위로 이동</string>
-    <string name="arrow_down_description" translatable="false">항목 아래로 이동</string>
     <string name="remove_item_description" translatable="false">항목 삭제</string>
     <!-- 기본 텍스트 -->
     <string name="manager_measure_default_text" translatable="false">점수 입력 + 점 척도</string>
@@ -87,13 +81,6 @@
     <string name="hr_info_organization" translatable="false">조직</string>
     <string name="hr_info_job" translatable="false">직무</string>
     <string name="hr_info_position_duty" translatable="false">직위/직책</string>
-    <string name="hr_info_company_textInput_hint" translatable="false">회사명을 입력해주세요</string>
-    <string name="hr_info_company_location_textInput_hint" translatable="false">회사위치를 입력해주세요</string>
-    <string name="hr_info_company_registration_textInput_hint" translatable="false">사업자번호를 입력해주세요</string>
-    <string name="hr_info_organization_textInput_hint" translatable="false">조직명을 입력해주세요</string>
-    <string name="hr_info_employment_info_textInput_hint" translatable="false">계약정보를 선택해주세요</string>
-    <string name="hr_info_job_textInput_hint" translatable="false">직무를 입력해주세요</string>
-    <string name="hr_info_position_duty_textInput_hint" translatable="false">직위/직책을 입력해주세요</string>
 
     <!-- 계약정보 옵션 -->
     <string-array name="employment_type_options">

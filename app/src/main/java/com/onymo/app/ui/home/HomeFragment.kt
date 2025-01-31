@@ -1,186 +1,224 @@
-package com.onymo.ui.home
+package com.onymo.app.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.onymo.app.R
+import com.onymo.app.data.model.Event
 import com.onymo.app.databinding.FragmentHomeBinding
-import com.onymo.app.ui.custom.NoticeTextView
-import com.onymo.app.ui.home.CalendarDecorators
 import com.onymo.app.ui.setting.SettingFragment
 import com.onymo.app.viewmodel.HomeViewModel
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
 import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * HomeFragment - 메인 홈 화면 Fragment
- * 출근하기 버튼과 달력 관리 기능 포함
+ * HomeFragment - 메인 홈 화면을 담당하는 Fragment
+ * 출근 버튼, 캘린더 기능, 설정 화면 이동 기능을 포함합니다.
  */
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!! // Null Safety를 위한 바인딩
     private lateinit var viewModel: HomeViewModel
+    private var isWorkStarted = false // 출근 완료 상태를 저장하는 변수
 
-    // 출근 여부를 관리하는 변수
-    private var isWorkStarted = false
+    private val handler = Handler(Looper.getMainLooper())
+    private val timeUpdateRunnable = object : Runnable {
+        override fun run() {
+            updateCurrentTime()
+            handler.postDelayed(this, 1000) // 1초마다 반복
+        }
+    }
 
-    /**
-     * onCreateView - View 객체를 생성하는 생명주기 메서드
-     * @return Fragment의 root View
-     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Fragment의 레이아웃을 inflate하여 binding 객체를 초기화
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    /**
-     * onViewCreated - View가 생성된 후 호출되는 생명주기 메서드
-     * UI 구성과 이벤트 리스너를 설정
-     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // ViewModel 초기화
         viewModel = HomeViewModel()
 
-        // UI 초기화
+        // UI 설정
         setupUI()
 
+        // 실시간 시간 업데이트 시작
+        handler.post(timeUpdateRunnable)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        handler.removeCallbacks(timeUpdateRunnable)
+        _binding = null
     }
 
     /**
-     * setupUI - 화면 초기 구성
-     * 캘린더와 공지사항 초기화 및 버튼 이벤트 설정
+     * UI 초기화 및 구성
      */
     private fun setupUI() {
-        val calendarView: MaterialCalendarView = binding.materialCalendarView
-        val noticeTextView: NoticeTextView = binding.selectedDateEvents
+        val calendarView: MaterialCalendarView = binding.homeCalendarView
         val today = CalendarDay.today()
 
-        // 오늘 날짜 텍스트 설정
-        binding.todayDateText.text = SimpleDateFormat(
-            "yyyy년 MM월 dd일 EEEE", Locale.getDefault()
-        ).format(Date())
+        // 오늘 날짜 실시간 업데이트
+        updateCurrentTime()
 
-        // 오늘 날짜 데코레이터 추가
-        calendarView.addDecorator(CalendarDecorators.todayDecorator(requireContext()))
+        // 캘린더 데코레이터 설정
+        setupCalendarDecorators(calendarView)
 
-        // 공휴일 데코레이터 추가
-        calendarView.addDecorator(CalendarDecorators.holidayDecorator(requireContext(), viewModel.getHolidayDates()))
-
-        // 주말 데코레이터 추가
-        calendarView.addDecorator(CalendarDecorators.weekendDecorator(requireContext(), java.util.Calendar.SATURDAY))
-        calendarView.addDecorator(CalendarDecorators.weekendDecorator(requireContext(), java.util.Calendar.SUNDAY))
-
-        // 기본적으로 오늘 날짜를 선택
+        // 오늘 날짜 선택
         calendarView.setDateSelected(today, true)
-        noticeTextView.setEvents(
-            viewModel.getEventsForDate(today.toString()),
-            isHoliday = false,
-            isToday = true
-        )
 
-        // 날짜 선택 이벤트 처리
-        calendarView.setOnDateChangedListener(OnDateSelectedListener { _, date, _ ->
-            // 날짜를 "yyyy-MM-dd" 형식으로 변환
-            val selectedDate = String.format("%04d-%02d-%02d", date.year, date.month + 1, date.day)
-            val isToday = date == today
-            val events = viewModel.getEventsForDate(selectedDate) // 특정 날짜의 모든 이벤트를 가져옴
-            noticeTextView.setEvents(
-                events,
-                isHoliday = viewModel.getHolidayDates().contains(date),
-                isToday = isToday
-            )
-        })
-        // 출근 버튼 및 설정 버튼 초기화
+        // 이벤트 리스트 초기화
+        updateEventList(today)
+
+        // 날짜 선택 이벤트 설정
+        calendarView.setOnDateChangedListener { _, date, _ ->
+            updateEventList(date)
+            binding.homeStartWorkBtn.isEnabled = date == today && !isWorkStarted
+        }
+
+        // 출근 버튼 설정
         setupStartWorkButton()
 
-        // 설정 버튼 이벤트 처리
+        // 설정 버튼 설정
         setupSettingsButton()
     }
 
     /**
-     * setupStartWorkButton - 출근하기 버튼 클릭 이벤트 설정
-     * 출근하기 상태에 따라 버튼 동작 및 UI 업데이트
+     * 현재 시간 업데이트하여 화면에 표시
+     */
+    private fun updateCurrentTime() {
+        val currentTime = SimpleDateFormat(
+            "yyyy년 MM월 dd일 EEEE HH:mm:ss", Locale.getDefault()
+        ).format(Date())
+        binding.homeTodayDate.text = currentTime
+    }
+
+    /**
+     * 캘린더 데코레이터 설정
+     */
+    private fun setupCalendarDecorators(calendarView: MaterialCalendarView) {
+        calendarView.addDecorator(HomeCalendarDecorators.todayDecorator(requireContext()))
+
+        viewModel.holidayDates.observe(viewLifecycleOwner) { holidayDates ->
+            calendarView.addDecorator(
+                HomeCalendarDecorators.holidayDecorator(requireContext(), holidayDates)
+            )
+        }
+
+        calendarView.addDecorator(
+            HomeCalendarDecorators.weekendDecorator(requireContext(), Calendar.SATURDAY)
+        )
+        calendarView.addDecorator(
+            HomeCalendarDecorators.weekendDecorator(requireContext(), Calendar.SUNDAY)
+        )
+    }
+
+    /**
+     * 출근 버튼 클릭 이벤트 설정
      */
     private fun setupStartWorkButton() {
-        binding.startWorkButton.setOnClickListener {
+        binding.homeStartWorkBtn.setOnClickListener {
             val today = CalendarDay.today()
-            val todayKey = String.format("%04d-%02d-%02d", today.year, today.month + 1, today.day)
 
             if (!isWorkStarted) {
-                // 출근 상태로 전환
                 isWorkStarted = true
-
-                // 버튼 상태 업데이트
-                binding.startWorkButton.apply {
-                    text = getString(R.string.home_work_started) // 텍스트를 "출근 완료"로 변경
-                    isEnabled = false // 버튼 비활성화
-                    setBackgroundResource(R.drawable.rounded_start_work_button_background_disabled) // 비활성화 배경 적용
+                binding.homeStartWorkBtn.apply {
+                    text = "출근완료"
+                    isEnabled = false
+                    setButtonEnabled(this, isEnabled)
                 }
-
-                // 캘린더에 출근 점 표시
-                binding.materialCalendarView.addDecorator(
-                    CalendarDecorators.workDecorator(requireContext(), today)
+                binding.homeCalendarView.addDecorator(
+                    HomeCalendarDecorators.workDecorator(requireContext(), today)
                 )
-
-                // 공지사항에 "출근 완료" 추가
-                binding.selectedDateEvents.setEvents(
-                    events = viewModel.getEventsForDate(todayKey), // 기존이벤트
-                    isHoliday = viewModel.getHolidayDates().contains(today),
-                    isToday = true,
-                    isWorkComplete = true // 출근 완료 상태를 true로 설정
-                )
+                updateEventList(today, isWorkComplete = true)
             } else {
-                // 이미 출근 완료 상태 -> 다이얼로그 표시
                 showWorkAlreadyStartedDialog()
             }
         }
     }
 
     /**
-     * showWorkAlreadyStartedDialog - 이미 출근 완료 다이얼로그 표시
+     * 출근 완료 상태 업데이트
+     */
+    private fun setButtonEnabled(button: View, isEnabled: Boolean) {
+        button.isEnabled = isEnabled
+        if (button is androidx.appcompat.widget.AppCompatButton) {
+            val backgroundRes = if (isEnabled) {
+                R.drawable.btn_bg_work_started_selector
+            } else {
+                R.drawable.btn_bg_work_started_selector
+            }
+            button.setBackgroundResource(backgroundRes)
+            val textColorRes = if (isEnabled) {
+                R.color.color_on_primary
+            } else {
+                R.color.color_button_disabled_text
+            }
+            button.setTextColor(ContextCompat.getColor(requireContext(), textColorRes))
+        }
+    }
+
+    /**
+     * 이미 출근한 경우 다이얼로그 표시
      */
     private fun showWorkAlreadyStartedDialog() {
         val dialogView = LayoutInflater.from(requireContext())
-            .inflate(R.layout.dialog_work_already_started, null)
+            .inflate(R.layout.dialog_work_started, null)
 
         val dialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
             .setView(dialogView)
             .create()
 
-        // 다이얼로그 테두리를 둥글게 설정
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        // 확인 버튼 클릭 이벤트 설정
         dialogView.findViewById<Button>(R.id.dialog_button_ok).setOnClickListener {
             dialog.dismiss()
         }
 
-        // 다이얼로그 표시
         dialog.show()
     }
 
     /**
-     * setupSettingsButton - 설정 버튼 동작 설정
+     * 설정 버튼 클릭 이벤트 설정
      */
     private fun setupSettingsButton() {
-        binding.topbarSetting.setOnClickListener {
+        binding.homeSetting.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SettingFragment())
                 .addToBackStack(null)
                 .commit()
         }
+    }
+
+    /**
+     * 이벤트 리스트 업데이트
+     */
+    @SuppressLint("DefaultLocale")
+    private fun updateEventList(date: CalendarDay, isWorkComplete: Boolean = false) {
+        val selectedDate = String.format("%04d-%02d-%02d", date.year, date.month + 1, date.day)
+        viewModel.eventsForDate.observe(viewLifecycleOwner) { events ->
+            val eventList = events.toMutableList()
+            if (isWorkComplete) {
+                eventList.add(0, Event("출근 완료", selectedDate))
+            }
+            binding.homeSelectedDateEvents.adapter = HomeListAdapter(requireContext(), R.layout.item_event, eventList)
+        }
+        viewModel.loadEventsForDate(selectedDate)
     }
 }

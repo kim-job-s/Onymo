@@ -5,58 +5,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSurface">
+    android:background="@color/color_background">
 
     <!-- 상단바 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topbar_manager"
+        android:id="@+id/manager_topbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/topbar_height"
-        android:padding="@dimen/padding_medium"
-        android:background="@color/colorSurface"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/color_background"
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- 타이틀 -->
-        <TextView
-            android:id="@+id/topbar_title_manager"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/manager_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_manager"
-            android:textSize="@dimen/text_size_title"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="@color/color_on_surface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <!-- 검색 버튼 -->
-        <ImageButton
-            android:id="@+id/topbar_search"
-            android:layout_width="@dimen/icon_size_small"
-            android:layout_height="@dimen/icon_size_small"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/search"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_topbar_search_24px"
-            android:contentDescription="@string/topbar_search_description"
+            android:contentDescription="검색"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/color_on_surface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Tab Layout -->
+    <!-- 구분선 -->
+    <View
+        android:id="@+id/mypage_topbar_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/color_divider"
+        app:layout_constraintTop_toBottomOf="@id/manager_topbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Fragment Container -->
+    <!-- Tab Layout -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorSurface"
-        app:layout_constraintTop_toBottomOf="@id/topbar_manager"
+        android:background="@color/color_background"
+        app:layout_constraintTop_toBottomOf="@id/mypage_topbar_divider"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/tabIndicatorColor"
+        app:tabIndicatorColor="@color/color_tab_indicator"
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/tabSelectedTextColor"
-        app:tabTextColor="@color/tabUnselectedTextColor"
+        app:tabSelectedTextColor="@color/color_tab_selected_text"
+        app:tabTextColor="@color/color_tab_unselected_text"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 
